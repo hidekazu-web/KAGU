@@ -1,7 +1,5 @@
 node_modules
-package-lock.json
 yarn.lock
-unpkg-master
 style.css.map
 初期ファイル
 *.zip
