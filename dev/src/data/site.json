@@ -1,0 +1,7 @@
+{
+  "name": "サイトの名前",
+  "description": "サイトの概要",
+  "keywords": "サイトのキーワード1, サイトのキーワード2",
+  "rootUrl": "https://kagu.pilotfish21.com/",
+  "ogpImage": "og-image.jpg"
+}

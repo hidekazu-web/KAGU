@@ -1,0 +1,79 @@
+/************************************************************************
+* 基本形
+************************************************************************/
+.c-media {
+  padding: 2rem;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: flex-start;
+}
+
+.c-media__img {
+  position: relative;
+  flex: 0 0 25%;
+  height: 0;
+  padding-top: 25%;
+  overflow: hidden;
+
+  & > img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.c-media__body {
+  margin-left: 3.33333%;
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-media__date {
+  font-size: 1.4rem;
+}
+
+.c-media__title {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.c-media__lead {
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.c-media__text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+// 逆位置 -------------------------------------------------------------------
+.c-media--reverse {
+  flex-direction: row-reverse;
+
+  & .c-media__img {
+    margin-left: 3.33333%;
+  }
+
+  & .c-media__body {
+    margin-left: 0;
+    text-align: right;
+  }
+}

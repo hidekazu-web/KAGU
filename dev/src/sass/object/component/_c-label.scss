@@ -1,0 +1,42 @@
+/************************************************************************
+* 基本形（バッジと言われることもある）
+************************************************************************/
+.c-label {
+  display: inline-block;
+  padding: 0.2em 0.3em;
+  background-color: $color-main;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: $fw-bold;
+  border: 2px solid transparent;
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+// リンクバッジ -------------------------------------------------------------------
+.c-label--link {
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    border-color: currentColor;
+    color: $color-main;
+  }
+}
+
+/************************************************************************
+* バリエーション
+************************************************************************/
+.c-roundedLabel {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  background-color: $color-main;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: $fw-bold;
+  border: 2px solid transparent;
+  border-radius: 1em;
+}

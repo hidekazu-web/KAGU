@@ -1,0 +1,147 @@
+// 色
+$btn-background-color: #424242;
+$btn-border-color: transparent; // transparentにすることでbackground-colorが見える
+$btn-font-color: #fff;
+
+// サイズ
+$btn-width: 30rem;
+$btn-border-width: 2px;
+$btn-border-radius: 0;
+$btn-font-size: $fz-base;
+$btn-font-weight: $fw-base;
+$btn-letter-spacing: 0;
+
+/************************************************************************
+* 基本形
+************************************************************************/
+.c-btn {
+  appearance: none;
+  margin: 0;
+  display: inline-block;
+  padding: 1em 2em;
+  // テキストに応じて大きさを動的に変える場合はwidthを指定しない
+  // width: $btn-width;      // ボタンの大きさを固定したい場合（テキストが多いと改行する）
+  // min-width: $btn-width;  // ボタンの最小の大きさを指定する場合
+  // max-width: 100%;        // どんなに大きくても親要素の大きさまでにする
+  border: $btn-border-width solid $btn-border-color;
+  background-image: none;
+  background-color: $btn-background-color;
+  border-radius: $btn-border-radius;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  color: $btn-font-color;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  letter-spacing: $btn-letter-spacing;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $btn-background-color;
+    background-color: $btn-font-color;
+    border-color: currentColor; // その要素もしくは親要素のcolorの値と同じになる
+  }
+
+  // &::-moz-foucus-inner {
+  // 	padding: 0;
+  // 	border: none;
+  // }
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+// 右矢印 -------------------------------------------------------------------
+.c-btn--arrowRight {
+  position: relative;
+  padding-right: 2em;
+  padding-left: 1.38em;
+
+  &::after {
+    content: "\f061";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.83em;
+    font-family: $ff-awesome;
+    font-weight: $fw-ultraBold;
+  }
+}
+
+// 大ボタン -------------------------------------------------------------------
+.c-btn--large {
+}
+
+// 色違い -------------------------------------------------------------------
+.c-btn--yellow {
+  background-color: yellow;
+  color: #222;
+
+  &:hover,
+  &:focus {
+    border-color: yellow;
+    color: #222;
+  }
+}
+
+/************************************************************************
+* バリエーション:角丸ボタン
+************************************************************************/
+.c-roundedBtn {
+  display: inline-block;
+  width: 236px;
+  max-width: 100%;
+  padding: 15px 10px;
+  background-color: $color-main;
+  border: 2px solid transparent;
+  border-bottom-color: darken($color-main, 10%);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    border-color: currentColor;
+    color: $color-main;
+  }
+}
+
+/************************************************************************
+* バリエーション：アイコン付き小ボタン
+************************************************************************/
+.c-beforeIconBtn {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em 0.3em;
+  border: 1px solid currentColor;
+  color: $color-main;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $color-main;
+    color: #fff;
+  }
+
+  &::before {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-family: $ff-awesome;
+    font-weight: $fw-ultraBold;
+  }
+}
+
+.c-beforeIconBtn--download::before {
+  content: "\f019";
+}

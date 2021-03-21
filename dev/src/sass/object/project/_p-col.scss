@@ -1,0 +1,128 @@
+/************************************************************************
+* 基本形
+************************************************************************/
+.p-col {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+// 3列 -------------------------------------------------------------------
+.p-col--col3 {
+  $num: 3;
+  $mr: 40px;
+  $mt: 40px;
+  $tab_num: 2;
+  $sp_num: 1;
+  $margin-num: $num - 1;
+  $row-num: $num + 1;
+
+  @include mq(pc) {
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$num} - 1px);
+      &:not(:nth-child(#{$num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(tab-only) {
+    $margin-num: $tab_num - 1;
+    $row-num: $tab_num + 1;
+
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$tab_num} - 1px);
+      &:not(:nth-child(#{$tab_num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(sp) {
+    @if $sp_num == 1 {
+      & > .p-col__item + .p-col__item {
+        margin-top: $mt;
+      }
+    } @else {
+      $margin-num: $sp_num - 1;
+      $row-num: $sp_num + 1;
+
+      & > .p-col__item {
+        width: calc((100% - #{$mr} * #{$margin-num}) / #{$sp_num} - 1px);
+        &:not(:nth-child(#{$sp_num}n)) {
+          margin-right: $mr;
+        }
+        &:nth-child(n + #{$row-num}) {
+          margin-top: $mt;
+        }
+      }
+    }
+  }
+}
+
+// 4列 -------------------------------------------------------------------
+.p-col--col4 {
+  $num: 4;
+  $mr: 40px;
+  $mt: 40px;
+  $tab_num: 4;
+  $sp_num: 2;
+  $margin-num: $num - 1;
+  $row-num: $num + 1;
+
+  @include mq(pc) {
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$num} - 1px);
+      &:not(:nth-child(#{$num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(tab-only) {
+    $margin-num: $tab_num - 1;
+    $row-num: $tab_num + 1;
+
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$tab_num} - 1px);
+      &:not(:nth-child(#{$tab_num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(sp) {
+    @if $sp_num == 1 {
+      & > .p-col__item + .p-col__item {
+        margin-top: $mt;
+      }
+    } @else {
+      $margin-num: $sp_num - 1;
+      $row-num: $sp_num + 1;
+
+      & > .p-col__item {
+        width: calc((100% - #{$mr} * #{$margin-num}) / #{$sp_num} - 1px);
+        &:not(:nth-child(#{$sp_num}n)) {
+          margin-right: $mr;
+        }
+        &:nth-child(n + #{$row-num}) {
+          margin-top: $mt;
+        }
+      }
+    }
+  }
+}

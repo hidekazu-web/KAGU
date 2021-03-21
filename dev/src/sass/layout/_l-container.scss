@@ -1,0 +1,30 @@
+.l-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  width: $layout-width-container;
+  height: inherit;
+
+  @include mq("tab") {
+    padding-right: $pd-tab;
+    padding-left: $pd-tab;
+  }
+
+  @include mq("sp") {
+    padding-right: $pd-sp;
+    padding-left: $pd-sp;
+  }
+}
+
+.l-container--slim {
+  width: $layout-width-container * 0.8;
+}
+
+.l-container--wide {
+  width: $layout-width-container * 1.2;
+}
+
+.l-container--full {
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
+}

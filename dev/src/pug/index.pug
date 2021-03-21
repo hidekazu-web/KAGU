@@ -1,0 +1,116 @@
+extends /pug/includes/_layout
+include /pug/includes/_parts
+append variables
+  //- Required
+  - var pageTitle= "";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website"; // トップページは"website", それ以外は"article"
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var logo_tag = 'h1';
+  - var pageName = "home";
+
+append css
+
+append headscript
+  script(src="./js/viewport.js")
+
+append js
+  //- script(src="./js/.js")
+
+block content  
+  .mv
+    .l-container
+    // /.container
+  |
+  |
+
+
+  main.l-content.main
+    section.p-section ボタン
+      .l-container.p-section__content 標準コンテナ
+        .u-mt10
+          a.c-btn 標準ボタン
+        .l-container.l-container--full フルコンテナ
+          .u-mt10
+            a.c-btn.c-btn--arrowRight 右矢印付きボタン
+        .u-mt10
+          a.c-roundedBtn 角丸ボタン
+        .u-mt10
+          a.c-beforeIconBtn.c-beforeIconBtn--download ダウンロード
+
+    section.p-section カード
+      .l-container.p-section__content 標準コンテナ
+        - 
+          const obj = {
+            link: 'link.html',
+            img: './img/img.jpg',
+            alt: 'alt',
+            date: '2021.03.19',
+            title: 'タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル',
+            lead: 'リードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキストリードテキスト',
+            text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+          };
+        +card(obj, 'class')
+        .u-mt10
+          +card(obj, 'addclass', 'New')
+        .u-mt10
+          +card(obj, 'c-card--link', null, 'link.html')
+
+    section.p-section メディア
+      .l-container.l-container--slim.p-section__content スリムコンテナ
+        +media(obj, 'mediaClass')
+        .u-mt10
+          +media(obj, 'c-media--reverse mediaClass')
+
+    section.p-section アイコン
+      .l-container.l-container--wide.p-section__content ワイドコンテナ
+        .u-mt10
+          span.c-beforeIcon.c-beforeIcon--pdf: a(href="") アイコン付きテキスト.pdf
+        .u-mt10
+          span.c-beforeIcon.c-beforeIcon--xls: a(href="") アイコン付きテキスト.xls
+        .u-mt10
+          span.c-beforeIcon.c-beforeIcon--ppt: a(href="") アイコン付きテキスト.ppt
+        .u-mt10
+          span.c-beforeIcon.c-beforeIcon--checkSquare: a(href="") アイコン付きテキスト.checkSquare
+        .u-mt10
+          span.c-beforeIcon.c-beforeIcon--chevronLeft: a(href="") 戻る
+        .u-mt10
+          span.c-afterIcon.c-afterIcon--chevronRight: a(href="") 進む
+
+    section.p-section ラベル
+      .l-container.p-section__content 標準コンテナ
+        .u-mt10
+          span.c-label ラベル
+        .u-mt10
+          a.c-label.c-label--link リンクラベル
+        .u-mt10
+          span.c-roundedLabel 楕円ラベル
+
+    section.p-section column3
+      .l-container.p-section__content.u-mt10 標準コンテナ
+        .p-col.p-col--col3
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+    section.p-section column4
+      .l-container.p-section__content.u-mt10 標準コンテナ
+        .p-col.p-col--col4
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+          +card(obj, 'p-col__item')
+
+  // /.content
+  |
+  |
+
+append footer

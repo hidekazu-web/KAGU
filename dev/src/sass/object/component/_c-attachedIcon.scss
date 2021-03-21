@@ -1,0 +1,67 @@
+/************************************************************************
+* 基本形
+************************************************************************/
+// 基本形はなし
+
+/************************************************************************
+* バリエーション：前にアイコン付与
+************************************************************************/
+.c-beforeIcon {
+  &::before {
+    display: inline-block;
+    margin-right: 0.3em;
+    color: $color-main;
+    font-family: $ff-awesome;
+    font-weight: 400;
+  }
+}
+
+// PDFアイコン -------------------------------------------------------------------
+.c-beforeIcon--pdf::before {
+  content: "\f1c1";
+}
+
+// EXCELアイコン -------------------------------------------------------------------
+.c-beforeIcon--xls::before {
+  content: "\f1c3";
+}
+
+// PowerPointアイコン -------------------------------------------------------------------
+.c-beforeIcon--ppt::before {
+  content: "\f1c4";
+}
+
+// チェックボックスアイコン -------------------------------------------------------------------
+.c-beforeIcon--checkSquare::before {
+  content: "\f14a";
+}
+
+// 左三角 -------------------------------------------------------------------
+.c-beforeIcon--chevronLeft::before {
+  content: "";
+  width: 0.375em;
+  height: 0.375em;
+  border-bottom: 0.125em solid $color-main;
+  border-left: 0.125em solid $color-main;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+/************************************************************************
+* バリエーション：後ろにアイコン付与
+************************************************************************/
+.c-afterIcon::after {
+  display: inline-block;
+  margin-left: 0.3em;
+  color: $color-main;
+  font-family: $ff-awesome;
+  font-weight: $fw-ultraBold;
+}
+
+.c-afterIcon--chevronRight::after {
+  content: "";
+  width: 0.375em;
+  height: 0.375em;
+  border-top: 0.125em solid $color-main;
+  border-right: 0.125em solid $color-main;
+  transform: rotate(45deg) translateY(-50%);
+}

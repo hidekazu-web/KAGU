@@ -1,0 +1,26 @@
+block variables
+
+header.l-header
+  .l-container
+    .p-header
+      #{logo_tag}.p-header__logo: a(href="/"): img(src="./img/header-logo.png", alt="ロゴ")
+
+      nav.p-header__nav#drawer-content1.drawer-content.for-drawer(aria-hidden="true")
+        ul
+          - for(let i = 1; i <= 5; i++)
+            li: a(href="#") MENU#{i}
+      // /.header-nav
+
+      .p-header__drawer
+        button.drawer-icon.js-drawer.for-drawer(type="button" data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
+          |
+          span.drawer-bars
+            span.drawer-bar
+          |
+        .drawer-bg.for-drawer.js-drawer(data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
+      // /.header-drawer
+    // /.header-content
+  // /.header-inner
+// /.header
+|
+|

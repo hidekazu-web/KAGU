@@ -1,0 +1,54 @@
+mixin card_body(obj, addClass, badge)
+  if(badge != null)
+    b.c-card__badge
+      span.c-card__badgeText #{badge}
+  figure.c-card__img: img(src=obj.img, alt=obj.alt)
+  .c-card__body
+    if(obj.date)
+      time(datetime=obj.date).c-card__date= obj.date
+    if(obj.title)
+      h3.c-card__title= obj.title
+    if(obj.lead)
+      p.c-card__lead !{obj.lead}
+    if(obj.text)
+      p.c-card__text !{obj.text}
+
+mixin card(obj, addClass, badge, link)
+  if(link)
+    a.c-card(href=link class=addClass)
+      +card_body(obj, addClass, badge)
+  else
+    article.c-card(class=addClass)
+      +card_body(obj, addClass, badge)
+
+
+mixin media(obj, addClass)
+  article.c-media(class=addClass)
+    figure.c-media__img: img(src=obj.img, alt=obj.alt)
+    .c-media__body
+      if(obj.date)
+        time(datetime=obj.date).c-media__date= obj.date
+      if(obj.title)
+        h3.c-media__title= obj.title
+      if(obj.text)
+        p.c-media__text !{obj.text}
+
+mixin breadcrumb(obj)
+  .c-breadcrumb
+    ul.c-breadcrumb__list
+      li.c-breadcrumb__item: a(href="/") TOP
+      li.c-breadcrumb__item !{pageTitle}
+
+mixin table
+  table.c-table
+    tbody
+      tr
+        th 効能
+        td 神経痛・慢性関節リューマチ・腰痛・冷え性・慢性婦人病・うちみなど
+      tr
+        th 泉質
+        td ナトリウム・カルシウム-塩化物泉
+      tr
+        th 飲用効果
+        td 弱塩化物泉は肌にやわらかなため、高齢者や病後の回復期によく、飲用すれば慢性便秘や慢性消化器病に効果があります。
+
