@@ -70,7 +70,6 @@ const PATHS = {
     src: "./src/pug/**/!(_)*.pug",
     watch: "./src/pug/**/*.pug",
     dest: "./dist",
-    destwp: "../public/wp-content/themes/" + themes,
   },
   php: {
     src: "./src/php/**/*.php",
@@ -136,13 +135,13 @@ function pugFiles() {
     }
   };
   return src(PATHS.pug.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(data(function (file) {
+    .pipe(sitemode.html(plumber({ errorHandler: errorHandler })))
+    .pipe(sitemode.html(data(function (file) {
       locals.relativePath = path.relative(file.base, file.path.replace(/.pug$/, '.html'));
       return locals;
-    }))
-    .pipe(pug(option))
-    .pipe(mode.production(
+    })))
+    .pipe(sitemode.html(pug(option)))
+    .pipe(sitemode.html(mode.production(
       htmlmin({
         // htmlの圧縮
         collapseWhitespace: true,  // true:インデントなし false:インデントなし
@@ -150,12 +149,12 @@ function pugFiles() {
         minifyJS: true,
         removeComments: true
       })
-    ))
-    .pipe(mode.development(htmlbeautify()))
-    .pipe(sitemode.php(rename({ extname: '.php' })))
+    )))
+    .pipe(sitemode.html(mode.development(htmlbeautify())))
+    // .pipe(sitemode.php(rename({ extname: '.php' })))
     .pipe(sitemode.html(dest(PATHS.pug.dest)))
-    .pipe(sitemode.php(dest(PATHS.pug.destwp)))
-    .pipe(browserSync.reload({ stream: true }));
+    // .pipe(sitemode.php(dest(PATHS.pug.destwp)))
+    .pipe(sitemode.html(browserSync.reload({ stream: true })));
 }
 
 // php
