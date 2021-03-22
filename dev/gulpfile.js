@@ -63,13 +63,18 @@ const sitemode = require("gulp-mode")({
   verbose: false
 });
 
-const themes = JSON.parse(fs.readFileSync(PATHS.json.src + '/themes.json')).themes_name;
+const themes = 'kagu';
 
 const PATHS = {
   pug: {
     src: "./src/pug/**/!(_)*.pug",
     watch: "./src/pug/**/*.pug",
     dest: "./dist",
+    destwp: "../public/wp-content/themes/" + themes,
+  },
+  php: {
+    src: "./src/php/**/*.php",
+    watch: "./src/php/**/*.php",
     destwp: "../public/wp-content/themes/" + themes,
   },
   ejs: {
@@ -90,7 +95,9 @@ const PATHS = {
   },
   js: {
     src: "./src/js/**/*.js",
-    dist: "./dist/js/",
+    dest: "./dist/js/",
+    destwp: "../public/wp-content/themes/" + themes + "/js",
+    mapwp: "../public/wp-content/themes/" + themes + "/js/map",
     map: "./dist/js/map",
     core: "src/js/core/**/*.js",
     app: "src/js/app/**/*.js"
@@ -148,7 +155,13 @@ function pugFiles() {
     .pipe(sitemode.php(rename({ extname: '.php' })))
     .pipe(sitemode.html(dest(PATHS.pug.dest)))
     .pipe(sitemode.php(dest(PATHS.pug.destwp)))
-    .pipe(sitemode.html(browserSync.reload({ stream: true })));
+    .pipe(browserSync.reload({ stream: true }));
+}
+
+// php
+function phpFunc() {
+  return src(PATHS.php.src)
+    .pipe(sitemode.php(dest(PATHS.php.destwp)));
 }
 
 // ejs
@@ -214,7 +227,8 @@ function sassFunc() {
     .pipe(sitemode.html(mode.production(dest(PATHS.styles.dest))))
     .pipe(sitemode.php(mode.development(dest(PATHS.styles.destwp, { sourcemaps: "./map" }))))
     .pipe(sitemode.php(mode.production(dest(PATHS.styles.destwp))))
-    .pipe(sitemode.html(browserSync.reload({ stream: true })));
+    // .pipe(browserSync.reload({ stream: true }));
+    .pipe(browserSync.stream());
 };
 
 
@@ -247,7 +261,10 @@ function js() {
     //     suffix: ".min"
     //   })
     // )
-    .pipe(dest(PATHS.js.dist, { sourcemaps: "./map" }))
+    .pipe(sitemode.html(mode.development(dest(PATHS.js.dest, { sourcemaps: "./map" }))))
+    .pipe(sitemode.html(mode.production(dest(PATHS.js.dest))))
+    .pipe(sitemode.php(mode.development(dest(PATHS.js.destwp, { sourcemaps: "./map" }))))
+    .pipe(sitemode.php(mode.production(dest(PATHS.js.destwp))))
     .pipe(browserSync.reload({ stream: true }));
 };
 
@@ -292,14 +309,15 @@ const distClean = () => {
 // server===========================================
 const browserSyncOption = {
   // open: false,
-  port: 3000,
-  ui: {
-    port: 3001
-  },
-  server: {
-    baseDir: PATHS.pug.dest, // output directory,
-    index: "index.html"
-  }
+  // port: 3000,
+  // ui: {
+  //   port: 3001
+  // },
+  // server: {
+  //   baseDir: PATHS.pug.dest, // output directory,
+  //   index: "index.html"
+  // }
+  proxy: 'https://kagu.local'
 };
 function browsersync(done) {
   browserSync.init(browserSyncOption);
@@ -316,6 +334,7 @@ function browserReload(done) {
 // watch
 function watchFiles(done) {
   watch(PATHS.pug.watch, series(pugFiles, browserReload));
+  watch(PATHS.php.watch, series(phpFunc, browserReload));
   watch(PATHS.ejs.watch, series(ejsFunc, browserReload));
   watch(PATHS.styles.src, sassFunc);
   watch(PATHS.ts.src, ts);
@@ -325,14 +344,14 @@ function watchFiles(done) {
 }
 
 // watch
-function watchWpFiles(done) {
-  watch(PATHS.pug.watch, pugFiles);
-  watch(PATHS.styles.src, sassFunc);
-  watch(PATHS.ts.src, ts);
-  watch(PATHS.js.src, js);
-  watch(PATHS.image.src, series(imageminFunc, browserReload));
-  done();
-}
+// function watchWpFiles(done) {
+//   watch(PATHS.pug.watch, pugFiles);
+//   watch(PATHS.styles.src, sassFunc);
+//   watch(PATHS.ts.src, ts);
+//   watch(PATHS.js.src, js);
+//   watch(PATHS.image.src, series(imageminFunc, browserReload));
+//   done();
+// }
 
 // watchSass
 function watchSassFiles(done) {
@@ -342,19 +361,19 @@ function watchSassFiles(done) {
 
 // commands
 exports.default = series(
-  parallel(sassFunc, pugFiles, js, imageminFunc),
+  parallel(sassFunc, pugFiles, phpFunc, js, imageminFunc),
   series(browsersync, watchFiles)
 );
 
-exports.watchwp = series(
-  parallel(sassFunc, pugFiles, js, imageminFunc),
-  watchWpFiles
-)
+// exports.watchwp = series(
+//   parallel(sassFunc, pugFiles, js, imageminFunc),
+//   watchWpFiles
+// )
 
 exports.watchsass = series(sassFunc, watchSassFiles);
 
 exports.build = parallel(
-  sassFunc, pugFiles, js, imageminFunc
+  sassFunc, pugFiles, phpFunc, js, imageminFunc
 );
 
 exports.pug = pugFiles;
