@@ -10,7 +10,7 @@ const data = require('gulp-data');
 const del = require("del");
 
 /* sass */
-const sass = require("gulp-sass");
+const sass = require("gulp-dart-sass");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const sassGlob = require("gulp-sass-glob");
