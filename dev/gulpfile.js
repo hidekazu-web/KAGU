@@ -79,9 +79,10 @@ const PATHS = {
   },
   styles: {
     src: "./src/sass/**/*.scss",
-    dest: "./dist/css",
+    dest: "./dist/",
     destwp: "../public/wp-content/themes/" + themes,
-    map: "./dist/css/map"
+    mapwp: "../public/wp-content/themes/" + themes,
+    map: "./dist/map"
   },
   ts: {
     src: "./src/typescript/**/*.ts",
