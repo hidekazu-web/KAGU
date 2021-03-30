@@ -11,3 +11,10 @@
   <?php endif; ?>
 <?php endif; ?>
 <?php wp_head(); ?>
+<?php if(is_user_logged_in()) : ?>
+  <style>
+    header {
+      margin-top: 32px;
+    }
+  </style>
+<?php endif; ?>

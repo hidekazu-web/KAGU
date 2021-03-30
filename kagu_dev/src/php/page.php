@@ -8,11 +8,11 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <?php get_template_part('includes/head'); ?>
+  <?php get_template_part('includes/lower_fv'); ?>
 
   <main class="l-main">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <?php get_template_part('includes/lower_fv'); ?>
 
         <?php the_content(); ?>
 

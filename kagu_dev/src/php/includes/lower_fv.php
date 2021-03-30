@@ -7,12 +7,19 @@
 <section class="p-lowerFv">
 
   <h1 class="p-lowerFv__title c-lv1Heading">
-    <?php the_title(); ?>
+    <?php if (is_page()) {
+      the_title();
+    } else {
+      the_archive_title();
+    } ?>
     <span>
-      <?php if (scf::get('sub_title')) {
-        echo scf::get('sub_title');
-      } else {
-        echo $post->post_name;
+      <?php
+      if (is_page()) {
+        if (scf::get('sub_title')) {
+          echo scf::get('sub_title');
+        } else {
+          echo $post->post_name;
+        }
       } ?>
     </span>
   </h1><!-- /.p-lowerFv__title -->

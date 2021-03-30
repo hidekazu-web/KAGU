@@ -8,15 +8,15 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <?php get_template_part('includes/head'); ?>
+  <?php get_template_part('includes/lower_fv'); ?>
 
   <main class="l-main">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <?php get_template_part('includes/lower_fv'); ?>
 
         <section class="p-section p-recruitSection">
           <div class="p-section__title c-lv2Heading">募集要項<span>requirements</span></div><!-- /.p-section__title c-lv2Heading -->
-          <div class="l-container l-container--slim p-section__content">
+          <div class="l-container l-container--narrow p-section__content">
             <div class="p-recruitSection__body">
               <?php $items = scf::get('recruit_guidelines');
               if ($items) :
@@ -39,7 +39,7 @@
             <div class="p-recruitSection__footer">
               <a href="<?php echo esc_html(home_url('/contact')); ?>" class="c-btn">応募する</a><!-- /.c-btn -->
             </div><!-- /.p-recruitSection__footer -->
-          </div><!-- /.l-container l-container--slim -->
+          </div><!-- /.l-container l-container--narrow -->
         </section><!-- /.p-section p-recruitSection -->
         <?php the_content(); ?>
 

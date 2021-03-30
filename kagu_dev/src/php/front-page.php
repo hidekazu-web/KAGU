@@ -27,7 +27,7 @@
         </section><!-- /.p-section p-fv -->
 
         <section class="p-section p-newsSection">
-          <div class="l-container l-container--slim p-section__content c-box">
+          <div class="l-container l-container--narrow p-section__content c-box">
             <?php $post_object = get_post_type_object('news'); ?>
             <h2 class="p-section__title c-lv2Heading"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
             <?php
@@ -45,18 +45,20 @@
                 while ($the_query->have_posts()) : $the_query->the_post();
                 ?>
 
-                  <li class="p-post p-col__item">
-                    <a href="<?php the_permalink(); ?>">
-                      <div class="p-post__meta">
-                        <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
-                        <?php
-                        $terms = get_the_terms(get_the_ID(), 'news_tax');
-                        if ($terms[0]) :
-                        ?>
-                          <span class="p-post__label c-label"><?php echo esc_html($terms[0]->name); ?></span><!-- /.p-post__label -->
-                        <?php endif; ?>
-                      </div><!-- /.p-post__meta -->
-                      <h3 class="p-post__title"><?php the_title(); ?></h3><!-- /.p-post__title -->
+                  <li class="p-col__item">
+                    <a href="<?php the_permalink(); ?>" class="p-newsSection__itemLink">
+                      <article class="p-post p-post--col">
+                        <div class="p-post__meta">
+                          <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
+                          <?php
+                          $terms = get_the_terms(get_the_ID(), 'news_tax');
+                          if ($terms[0]) :
+                          ?>
+                            <span class="p-post__label c-label"><?php echo esc_html($terms[0]->name); ?></span><!-- /.p-post__label -->
+                          <?php endif; ?>
+                        </div><!-- /.p-post__meta -->
+                        <h3 class="p-post__title"><?php the_title(); ?></h3><!-- /.p-post__title -->
+                      </article><!-- /.p-post p-post--col -->
                     </a>
                   </li><!-- /.p-post-->
 
@@ -70,7 +72,7 @@
             <div class="p-newsSection__footer">
               <a href="<?php echo esc_html(get_post_type_archive_link('news')); ?>" class="c-btn"><?php echo esc_html($post_object->label); ?>一覧</a><!-- /.btn -->
             </div><!-- /.p-newsSection__footer -->
-          </div><!-- /.l-container l-container--slim p-newsSection__content c-box -->
+          </div><!-- /.l-container l-container--narrow p-newsSection__content c-box -->
         </section><!-- /.p-section p-newsSection -->
 
         <section class="p-section p-furnitureSection">

@@ -8,14 +8,14 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <?php get_template_part('includes/head'); ?>
+  <?php get_template_part('includes/lower_fv'); ?>
 
   <main class="l-main">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <?php get_template_part('includes/lower_fv'); ?>
 
         <section class="p-section p-storeListSection">
-          <div class="l-container l-container--slim p-section__content">
+          <div class="l-container l-container--narrow p-section__content">
             <h2 class="c-lv2Heading p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.c-lv2Heading p-section__title -->
             <div class="p-storeListSection__mapArea p-storeMap">
               <figure class="p-storeMap__img c-imgWrap"><img src="" alt=""></figure><!-- /.p-storeMap__img c-imgWrap -->
@@ -108,7 +108,7 @@
                 </div><!-- /.p-storeListSection__areaWrap -->
             <?php endif;
             endforeach; ?>
-          </div><!-- /.l-container l-container--slim p-section__content -->
+          </div><!-- /.l-container l-container--narrow p-section__content -->
         </section><!-- /.p-section p-storeListSection -->
 
         <?php the_content(); ?>
