@@ -76,3 +76,25 @@ add_filter('get_the_archive_title', function ($title) {
   }
   return $title;
 });
+
+
+/**
+ * SCF オプションページ
+ * @param string $page_title ページのtitle属性値
+ * @param string $menu_title 管理画面のメニューに表示するタイトル
+ * @param string $capability メニューを操作できる権限(manage_options とか)
+ * @param string $menu_slug オプションページのスラッグ。ユニークな値にすること
+ * @param string|null $icon_url メニューに表示するアイコンのURL
+ * @param int $position メニューの位置
+ */
+SCF::add_options_page('販売店', '販売店の登録', 'publish_pages', 'register_store', '', 10);
+SCF::add_options_page('展示場', '展示場の登録', 'publish_pages', 'register_showroom', '', 10);
+
+
+/**
+ * 投稿メニューを非表示
+ */
+add_action('admin_menu', function() {
+  global $menu;
+  remove_menu_page('edit.php');
+});
