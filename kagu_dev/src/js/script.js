@@ -21,7 +21,14 @@ jQuery(function () {
     } else {
       jQuery("body").attr("data-scroll-bottom", "false");
     }
+
+    if (1000 < scrollTop) {
+      jQuery('.js-totop').addClass('is-active');
+    } else {
+      jQuery('.js-totop').removeClass('is-active');
+    }
   });
+
 
   /* ドロワー */
   jQuery(".js-drawer").on("click", function (event) {
@@ -37,7 +44,7 @@ jQuery(function () {
     jQuery(`#${ariaControls}`).attr("aria-hidden", (jQuery(`#${ariaControls}`).hasClass(addClass) ? 'false' : 'true'));
 
     // 同じ制御対象を持つ要素全てに対して制御対象の状態に応じてaria-expanded属性を操作
-    jQuery(`[aria-controls=${ariaControls}]`).each(function() {
+    jQuery(`[aria-controls=${ariaControls}]`).each(function () {
       jQuery(this).attr("aria-expanded", (jQuery(`#${ariaControls}`).hasClass(addClass) ? 'false' : 'true'));
     });
 
@@ -106,57 +113,57 @@ jQuery(function () {
       // 入力されていないとき
       $submit.prop('disabled', true);
     }
-  })
+  });
 
-    // form validation
-    (function () {
-      var requireFlg = false;
-      var privacyFlg = false;
-      var $require = jQuery('#js-form .js-require');
-      var fillCount = 0;
+  // form validation
+  (function () {
+    var requireFlg = false;
+    var privacyFlg = false;
+    var $require = jQuery('#js-form .js-require');
+    var fillCount = 0;
 
-      function setSubmitProp() {
-        if (requireFlg && privacyFlg) {
-          jQuery('#js-submit').prop('disabled', false);
-        } else {
-          jQuery('#js-submit').prop('disabled', true);
-        }
+    function setSubmitProp() {
+      if (requireFlg && privacyFlg) {
+        jQuery('#js-submit').prop('disabled', false);
+      } else {
+        jQuery('#js-submit').prop('disabled', true);
+      }
+    }
+
+    // 必須項目
+    $require.on('blur', function () {
+      if (jQuery(this).attr('id') === 'js-formKana' && !jQuery(this).val().match(/^([ァ-ン]|ー)+$/)) {
+        jQuery(this).val('');
+        alert('全角カタカナで入力してください。')
       }
 
-      // 必須項目
-      $require.on('blur', function () {
-        if (jQuery(this).attr('id') === 'js-formKana' && !jQuery(this).val().match(/^([ァ-ン]|ー)+$/)) {
-          jQuery(this).val('');
-          alert('全角カタカナで入力してください。')
-        }
+      $require.each(function () {
+        var value = jQuery(this).val();
 
-        $require.each(function () {
-          var value = jQuery(this).val();
-
-          if ((value !== '' && value.match(/[^\s\t]/))) {
-            fillCount++;
-          }
-        });
-
-        requireFlg = (fillCount === $require.length ? true : false);
-
-        setSubmitProp();
-        fillCount = 0;
-      });
-
-      // プライバシーポリシー
-      jQuery('#form-privacy').on('change', function () {
-        privacyFlg = (jQuery(this).prop('checked') ? true : false);
-        setSubmitProp();
-      });
-
-      // 送信時
-      jQuery('#js-form').on('submit', function () {
-        if (!(requireFlg && privacyFlg)) {
-          alert('入力に誤りがあります。');
-          return false;
+        if ((value !== '' && value.match(/[^\s\t]/))) {
+          fillCount++;
         }
       });
-    })();
+
+      requireFlg = (fillCount === $require.length ? true : false);
+
+      setSubmitProp();
+      fillCount = 0;
+    });
+
+    // プライバシーポリシー
+    jQuery('#form-privacy').on('change', function () {
+      privacyFlg = (jQuery(this).prop('checked') ? true : false);
+      setSubmitProp();
+    });
+
+    // 送信時
+    jQuery('#js-form').on('submit', function () {
+      if (!(requireFlg && privacyFlg)) {
+        alert('入力に誤りがあります。');
+        return false;
+      }
+    });
+  })();
 
 });
