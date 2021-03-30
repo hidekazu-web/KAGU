@@ -15,7 +15,7 @@
         <?php get_template_part('includes/lower_fv'); ?>
 
         <section class="p-section p-recruitSection">
-          <div class="p-section__title c-lv2Header">募集要項<span>requirements</span></div><!-- /.p-section__title c-lv2Header -->
+          <div class="p-section__title c-lv2Heading">募集要項<span>requirements</span></div><!-- /.p-section__title c-lv2Heading -->
           <div class="l-container l-container--slim p-section__content">
             <div class="p-recruitSection__body">
               <?php $items = scf::get('recruit_guidelines');

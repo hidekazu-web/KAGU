@@ -16,23 +16,23 @@
 
         <section class="p-section p-searchTheme">
           <div class="l-container p-section__content">
-            <h2 class="p-section__title c-lv2Header">テーマで探す<span>SEARCH BY THEME</span></h2><!-- /.p-section__title -->
-            <div class="p-section__main l-flex l-flex--col3">
-              <div class="p-searchTheme__item l-flex__item">
+            <h2 class="p-section__title c-lv2Heading">テーマで探す<span>SEARCH BY THEME</span></h2><!-- /.p-section__title -->
+            <div class="p-section__main p-col p-col--col3">
+              <div class="p-searchTheme__item p-col__item">
                 <figure class="p-searchTheme__itemImg"><img src="" alt=""></figure><!-- /.p-searchTheme__itemImg -->
                 <div class="p-searchTheme__itemTheme"></div><!-- /.p-searchTheme__itemTheme -->
                 <a href="http://" target="_blank" rel="noopener noreferrer" class="p-searchTheme__link c-afterIcon c-afterIcon--arrow"></a><!-- /.p-searchTheme__link c-afterIcon c-afterIcon--arrow -->
-              </div><!-- /.p-searchTheme__item l-flex__item -->
-            </div><!-- /.p-section__main l-flex l-flex--col3 -->
+              </div><!-- /.p-searchTheme__item p-col__item -->
+            </div><!-- /.p-section__main p-col p-col--col3 -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section -->
 
         <section class="p-section p-searchColor">
           <div class="l-container p-section__content">
-            <div class="p-section__title c-lv2Header">カラーで探す<span>SEARCH BY COLOR</span></div><!-- /.p-section__title c-lv2Header -->
-            <div class="p-section__main l-flex l-flex--col6">
-              <div class="l-flex__item p-searchColor__item p-searchColor__item--e57373"></div><!-- /.l-flex__item p-searchColor__item p-searchColor__item--e57373 -->
-            </div><!-- /.p-section__main l-flex l-flex--col6 -->
+            <div class="p-section__title c-lv2Heading">カラーで探す<span>SEARCH BY COLOR</span></div><!-- /.p-section__title c-lv2Heading -->
+            <div class="p-section__main p-col p-col--col6">
+              <div class="p-col__item p-searchColor__item p-searchColor__item--e57373"></div><!-- /.p-col__item p-searchColor__item p-searchColor__item--e57373 -->
+            </div><!-- /.p-section__main p-col p-col--col6 -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section p-searchColor -->
 

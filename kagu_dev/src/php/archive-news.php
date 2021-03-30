@@ -13,17 +13,17 @@
 
     <section class="p-section">
       <div class="l-container l-container--slim">
-        <div class="l-flex l-flex--col4">
-          <a href="<?php echo get_post_type_archive_link('news'); ?>" class="l-flex__item c-btn">すべて</a><!-- /.l-flex__item c-btn -->
+        <div class="p-col p-col--col4">
+          <a href="<?php echo get_post_type_archive_link('news'); ?>" class="p-col__item c-btn">すべて</a><!-- /.p-col__item c-btn -->
           <?php $terms = get_terms('news_tax', array(
             'hide_empty' => false,
           ));
           if ($terms) : ?>
             <?php foreach ($terms as $term) : ?>
-              <a href="<?php echo esc_html(get_term_link($term, 'news_tax')); ?>" class="l-flex__item c-btn"><?php echo esc_html($term->name); ?></a><!-- /.l-flex__item c-btn -->
+              <a href="<?php echo esc_html(get_term_link($term, 'news_tax')); ?>" class="p-col__item c-btn"><?php echo esc_html($term->name); ?></a><!-- /.p-col__item c-btn -->
             <?php endforeach; ?>
           <?php endif; ?>
-        </div><!-- /.l-flex l-flex--col4 -->
+        </div><!-- /.p-col p-col--col4 -->
       </div><!-- /.l-container l-container--slim -->
     </section><!-- /.p-section -->
 

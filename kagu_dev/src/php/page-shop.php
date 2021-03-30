@@ -16,7 +16,7 @@
 
         <section class="p-section p-storeListSection">
           <div class="l-container l-container--slim p-section__content">
-            <h2 class="c-lv2Header p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.c-lv2Header p-section__title -->
+            <h2 class="c-lv2Heading p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.c-lv2Heading p-section__title -->
             <div class="p-storeListSection__mapArea p-storeMap">
               <figure class="p-storeMap__img c-imgWrap"><img src="" alt=""></figure><!-- /.p-storeMap__img c-imgWrap -->
               <a href="#hokkaido" class="c-mapBtn">北海道</a><!-- /.c-mapBtn -->
@@ -86,7 +86,7 @@
                 }
             ?>
                 <div id="<?php echo $shop_list[0]['shop_area']; ?>" class="p-storeListSection__areaWrap">
-                  <h3 class="c-lv3Header"><?php echo esc_html($area); ?></h3><!-- /.c-lv3Header -->
+                  <h3 class="c-lv3Heading"><?php echo esc_html($area); ?></h3><!-- /.c-lv3Heading -->
                   <ul class="p-storeList">
                     <?php foreach($shop_list as $shop) : ?>
                       <li class="p-storeList__item p-storeItem">

@@ -11,9 +11,9 @@
 
   <main class="l-main">
 
-    <section class="p-section l-flex l-flex--col4">
-      <a href="<?php echo  ?>" class="l-flex__item c-btn"></a><!-- /.l-flex__item c-btn -->
-    </section><!-- /.p-section l-flex l-flex--col4 -->
+    <section class="p-section p-col p-col--col4">
+      <a href="<?php echo  ?>" class="p-col__item c-btn"></a><!-- /.p-col__item c-btn -->
+    </section><!-- /.p-section p-col p-col--col4 -->
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

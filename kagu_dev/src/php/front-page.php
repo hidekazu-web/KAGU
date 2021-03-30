@@ -29,7 +29,7 @@
         <section class="p-section p-newsSection">
           <div class="l-container l-container--slim p-section__content c-box">
             <?php $post_object = get_post_type_object('news'); ?>
-            <h2 class="p-section__title c-lv2Header"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
+            <h2 class="p-section__title c-lv2Heading"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
             <?php
             $args = array(
               'post_type' => 'news',
@@ -40,12 +40,12 @@
             );
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) : ?>
-              <ul class="p-newsSection__list p-section__main c-box__inner l-flex l-flex--col2">
+              <ul class="p-newsSection__list p-section__main c-box__inner p-col p-col--col2">
                 <?php
                 while ($the_query->have_posts()) : $the_query->the_post();
                 ?>
 
-                  <li class="p-post l-flex__item">
+                  <li class="p-post p-col__item">
                     <a href="<?php the_permalink(); ?>">
                       <div class="p-post__meta">
                         <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
@@ -75,7 +75,7 @@
 
         <section class="p-section p-furnitureSection">
           <div class="l-container p-section__content">
-            <h2 class="p-section__title c-lv2Header">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
+            <h2 class="p-section__title c-lv2Heading">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
             <div class="p-alternate p-section__main">
               <div class="p-alternate__item p-furnitureSection__item">
                 <figure class="p-alternate__item-primary"><img src="" alt=""></figure><!-- /.p-alternate__item-primary -->
@@ -93,7 +93,7 @@
                   <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
                 </div><!-- /.p-alternate__item-secondary -->
               </div><!-- /.p-alternate__item -->
-              <div class="l-flex l-flex--col3">
+              <div class="p-col p-col--col3">
                 <div class="p-card p-furnitureSection__item">
                   <figure class="p-card__img"><img src="" alt=""></figure><!-- /.p-card__img -->
                   <div class="p-card__body">
@@ -118,7 +118,7 @@
                     <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
                   </div><!-- /.p-card__body -->
                 </div><!-- /.p-card p-furnitureSection__item -->
-              </div><!-- /.l-flex l-flex--col3 -->
+              </div><!-- /.p-col p-col--col3 -->
             </div><!-- /.p-alternate -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section p-furnitureSection -->

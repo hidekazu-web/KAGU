@@ -1,6 +1,6 @@
 <section class="p-section p-cta">
   <div class="l-container p-section__content">
-    <h2 class="p-section__title c-lv2Header">採用情報<span>recruit</span></h2><!-- /.p-section__title -->
+    <h2 class="p-section__title c-lv2Heading">採用情報<span>recruit</span></h2><!-- /.p-section__title -->
     <p class="p-cta__text">
       KAGUの新卒・中途採用情報を掲載しております。<br>
       アルバイト情報についても掲載しております。

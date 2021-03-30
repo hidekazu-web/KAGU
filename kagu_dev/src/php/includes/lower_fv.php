@@ -6,7 +6,7 @@
 ?>
 <section class="p-lowerFv">
 
-  <h1 class="p-lowerFv__title c-lv1Header">
+  <h1 class="p-lowerFv__title c-lv1Heading">
     <?php the_title(); ?>
     <span>
       <?php if (scf::get('sub_title')) {
