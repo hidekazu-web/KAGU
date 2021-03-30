@@ -55,6 +55,25 @@
             <p>投稿がありません</p>
           <?php endif;  ?>
         </div><!-- /.p-section__main -->
+
+        <?php if (paginate_links()) : ?>
+          <!-- pagination -->
+          <div class="pagination">
+            <?php echo wp_kses_post(
+              paginate_links(
+                array(
+                  'end_size' => 0,
+                  'mid_size' => 1,
+                  'prev_next' => true,
+                  'prev_text' => '<i class="fas fa-angle-left"></i>',
+                  'next_text' => '<i class="fas fa-angle-right"></i>',
+                )
+              )
+            );
+            ?>
+          </div><!-- /.pagination -->
+        <?php endif; ?>
+
       </div><!-- /.l-container l-container--narrow -->
     </section><!-- /.p-section -->
 

@@ -1,9 +1,3 @@
-<?php
-
-/**
- * ループの中で呼ばれる前提
- *  */
-?>
 <section class="p-lowerFv">
 
   <h1 class="p-lowerFv__title c-lv1Heading">
