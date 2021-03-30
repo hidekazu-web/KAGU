@@ -38,8 +38,8 @@ add_action('wp_enqueue_scripts', function () {
 add_action('init', function () {
   register_nav_menus(array(
     'global' => 'ヘッダーメニュー',
-    'drawer' => 'ドロワーメニュー',
-    'footer' => 'フッターメニュー'
+    // 'drawer' => 'ドロワーメニュー',
+    // 'footer' => 'フッターメニュー'
   ));
 });
 
