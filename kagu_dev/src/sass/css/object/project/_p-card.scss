@@ -1,15 +1,15 @@
 /************************************************************************
 * 基本形
 ************************************************************************/
-.c-card {
+.p-card {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
-.c-card__badge {
+.p-card__badge {
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: 1;
     top: 0;
@@ -22,7 +22,7 @@
   }
 }
 
-.c-card__badgeText {
+.p-card__badgeText {
   position: absolute;
   z-index: 2;
   top: 1.2rem;
@@ -33,7 +33,7 @@
   transform: rotate(-45deg);
 }
 
-.c-card__img {
+.p-card__img {
   position: relative;
   height: 0;
   padding-top: 56.25%;
@@ -49,7 +49,7 @@
   }
 }
 
-.c-card__body {
+.p-card__body {
   padding: 2rem;
 
   & > * + * {
@@ -65,28 +65,28 @@
   }
 }
 
-.c-card__date {
+.p-card__date {
   font-size: 1.4rem;
 }
 
-.c-card__title {
+.p-card__title {
   font-size: 2.4rem;
   line-height: 1.25;
 }
 
-.c-card__lead {
+.p-card__lead {
   font-size: 2rem;
   line-height: 1.5;
 }
 
-.c-card__text {
+.p-card__text {
   line-height: 1.5;
 }
 
 /************************************************************************
 * modifier
 ************************************************************************/
-.c-card--link {
+.p-card--link {
   display: block;
   color: currentColor;
   text-decoration: none;
@@ -94,7 +94,7 @@
 
   &:hover,
   &:focus {
-    .c-card__img > img {
+    .p-card__img > img {
       transform: translateY(-50%) scale(1.1);
     }
   }

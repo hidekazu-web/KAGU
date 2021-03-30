@@ -1,14 +1,14 @@
 /************************************************************************
 * 基本形
 ************************************************************************/
-.c-media {
+.p-media {
   padding: 2rem;
   background-color: #f6f6f6;
   display: flex;
   align-items: flex-start;
 }
 
-.c-media__img {
+.p-media__img {
   position: relative;
   flex: 0 0 25%;
   height: 0;
@@ -26,7 +26,7 @@
   }
 }
 
-.c-media__body {
+.p-media__body {
   margin-left: 3.33333%;
 
   & > * + * {
@@ -42,21 +42,21 @@
   }
 }
 
-.c-media__date {
+.p-media__date {
   font-size: 1.4rem;
 }
 
-.c-media__title {
+.p-media__title {
   font-size: 2rem;
   line-height: 1.25;
 }
 
-.c-media__lead {
+.p-media__lead {
   font-size: 1.8rem;
   line-height: 1.25;
 }
 
-.c-media__text {
+.p-media__text {
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -65,14 +65,14 @@
 * modifier
 ************************************************************************/
 // 逆位置 -------------------------------------------------------------------
-.c-media--reverse {
+.p-media--reverse {
   flex-direction: row-reverse;
 
-  & .c-media__img {
+  & .p-media__img {
     margin-left: 3.33333%;
   }
 
-  & .c-media__body {
+  & .p-media__body {
     margin-left: 0;
     text-align: right;
   }
