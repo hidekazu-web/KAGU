@@ -57,17 +57,17 @@ add_filter('get_the_archive_title', function ($title) {
     $title = post_type_archive_title('', false);
   } elseif (is_date()) {
     $title = get_the_time('Y年n月');
-  // } elseif (is_date()) { // 日付アーカイブの場合
-  //   $title = '';
-  //   if (get_query_var('year')) {
-  //     $title .= get_query_var('year') . '年';
-  //   }
-  //   if (get_query_var('monthnum')) {
-  //     $title .= get_query_var('monthnum') . '月';
-  //   }
-  //   if (get_query_var('day')) {
-  //     $title .= get_query_var('day') . '日';
-  //   }
+    // } elseif (is_date()) { // 日付アーカイブの場合
+    //   $title = '';
+    //   if (get_query_var('year')) {
+    //     $title .= get_query_var('year') . '年';
+    //   }
+    //   if (get_query_var('monthnum')) {
+    //     $title .= get_query_var('monthnum') . '月';
+    //   }
+    //   if (get_query_var('day')) {
+    //     $title .= get_query_var('day') . '日';
+    //   }
   } elseif (is_search()) {
     $title = '検索結果：' . esc_html(get_search_query(false));
   } elseif (is_404()) {
@@ -92,9 +92,34 @@ SCF::add_options_page('展示場', '展示場の登録', 'publish_pages', 'regis
 
 
 /**
- * 投稿メニューを非表示
+ * 標準投稿メニューを非表示
  */
-add_action('admin_menu', function() {
+add_action('admin_menu', function () {
   global $menu;
   remove_menu_page('edit.php');
 });
+
+
+/**
+ * カスタムメニューのCSS Classをaタグに付与する
+ * https://twotone.me/web/1879/
+ */
+// add_filter('walker_nav_menu_start_el', 'add_class_on_link', 10, 4);
+// function add_class_on_link($item_output, $item)
+// {
+//   $css_class = esc_attr($item->classes[0]);
+//   if ($css_class) {
+//     return preg_replace('/(<a.*?)/', '$1' . " class='" . $css_class . "'", $item_output);
+//   } else {
+//     return $item_output;
+//   }
+// }
+
+// add_filter('nav_menu_link_attributes', 'myfn', 10, 2);
+// function myfn($atts, $item)
+// {
+//   if (strpos($item, 'ONLINE STORE')) {
+//     $atts['class'] = 'c-btn';
+//   }
+//   return $atts;
+// }
