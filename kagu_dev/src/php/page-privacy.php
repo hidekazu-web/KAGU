@@ -28,7 +28,7 @@
                   ?>
                       <div class="p-privacyList__item">
                         <h2 class="p-privacyList__title"><span><?php echo $index + 1; ?>.</span><?php echo $privacy_item['privacy_title']; ?></h2><!-- /.p-privacyList__title -->
-                        <p class="p-privacyList__text"><?php echo $privacy_item['privacy_text']; ?></p><!-- /.p-privacyList__text -->
+                        <p class="p-privacyList__text"><?php echo nl2br($privacy_item['privacy_text']); ?></p><!-- /.p-privacyList__text -->
                       </div><!-- /.p-privacyList__item -->
                   <?php endforeach;
                   endif; ?>
