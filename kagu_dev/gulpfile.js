@@ -85,7 +85,7 @@ const PATHS = {
     src: "./src/sass/**/*.scss",
     dest: "./dist/",
     destwp: "../public/wp-content/themes/" + themes,
-    mapwp: "../public/wp-content/themes/" + themes,
+    mapwp: "../public/wp-content/themes/" + themes + "/map",
     map: "./dist/map"
   },
   ts: {
@@ -295,14 +295,14 @@ function imageminFunc() {
 
 /// マップファイル除去 ////////////////////////////////////////////
 const cleanMap = () => {
-  return del([PATHS.styles.map, PATHS.js.map]);
+  return del([PATHS.styles.map, PATHS.js.map, PATHS.styles.mapwp, PATHS.js.mapwp], {force: true});
 };
 
 /**
  * dist をクリーンアップ
  */
 const distClean = () => {
-  return del([PATHS.pug.dest]);
+  return del([PATHS.pug.dest, PATHS.php.destwp], {force: true});
 }
 
 // server===========================================
@@ -310,8 +310,7 @@ const browserSyncOption = {
   // open: false,
   // port: 3000,
   // ui: {
-  //   port: 3001
-  // },
+  //   port: 3001  // },
   // server: {
   //   baseDir: PATHS.pug.dest, // output directory,
   //   index: "index.html"
@@ -360,6 +359,7 @@ function watchSassFiles(done) {
 
 // commands
 exports.default = series(
+  distClean,
   parallel(sassFunc, pugFiles, phpFunc, js, imageminFunc),
   series(browsersync, watchFiles)
 );
@@ -371,8 +371,9 @@ exports.default = series(
 
 exports.watchsass = series(sassFunc, watchSassFiles);
 
-exports.build = parallel(
-  sassFunc, pugFiles, phpFunc, js, imageminFunc
+exports.build = series(
+  distClean,
+  parallel(sassFunc, pugFiles, phpFunc, js, imageminFunc)
 );
 
 exports.pug = pugFiles;
