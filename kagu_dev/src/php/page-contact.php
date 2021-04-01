@@ -97,7 +97,7 @@
                 </dl><!-- /.p-form__items -->
                 <div class="p-form__checkBox">
                   <div class="c-check">
-                    <label><input class="c-check__input" type="checkbox" name="privacy-check"><span><a href="">プライバシーポリシー</a>に同意する</span></label>
+                    <label><input class="c-check__input" type="checkbox" name="privacy-check"><span><a href="<?php echo esc_html(home_url('/privacy')); ?>">プライバシーポリシー</a>に同意する</span></label>
                   </div><!-- /.c-checkBox -->
                 </div><!-- /.p-form__checkBox -->
                 <div class="p-form__footer">
