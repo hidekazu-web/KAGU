@@ -35,6 +35,7 @@ const ejs = require("gulp-ejs");
 const concat = require("gulp-concat");
 const order = require("gulp-order");
 const uglify = require("gulp-uglify");
+const saveLicense = require('uglify-save-license');
 const babel = require('gulp-babel');
 
 /* typescript */
@@ -253,8 +254,9 @@ function js() {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(uglify({ output: { comments: /^!/ } }))
-    .pipe(uglify({ output: { comments: 'some' } }))
+    .pipe(uglify({ output: { comments: saveLicense } }))
+    // .pipe(uglify({ output: { comments: /^!/ } }))
+    // .pipe(uglify({ output: { comments: 'some' } }))
     // .pipe(
     //   rename({
     //     suffix: ".min"
