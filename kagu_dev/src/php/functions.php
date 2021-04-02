@@ -8,6 +8,7 @@ add_action('after_setup_theme', function () {
   add_theme_support('post-thumbnails');
   add_theme_support('automatic-feed-links');
   add_theme_support('title-tag');
+  add_theme_support('custom-logo'); // カスタムロゴを使用可能にする
   add_theme_support(
     'html5',
     array(
@@ -24,9 +25,12 @@ add_action('after_setup_theme', function () {
  * CSS, JavaScript
  */
 add_action('wp_enqueue_scripts', function () {
-  wp_enqueue_style('adobefont', 'https://use.typekit.net/rfl8cna.css', array(), '', 'all');
+  // wp_enqueue_style('adobefont', 'https://use.typekit.net/rfl8cna.css', array(), '', 'all');
   wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', array(), '5.8.2', 'all');
-  wp_enqueue_style('my', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all');
+  wp_enqueue_style('Quicksand', 'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap', array(), '', 'all');
+  wp_enqueue_style('NotoSansJP', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap', array(), '', 'all');
+  wp_enqueue_style('my', get_template_directory_uri() . '/css/style.css', array('fontawesome', 'Quicksand', 'NotoSansJP'), '1.0.0', 'all');
+
   wp_enqueue_script('my', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
   wp_enqueue_script('my-vp', get_template_directory_uri() . '/js/viewport.js', array(), '1.0.0', false); //headタグ内で読み込む
 
