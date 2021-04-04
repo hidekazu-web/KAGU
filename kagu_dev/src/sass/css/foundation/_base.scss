@@ -10,8 +10,7 @@
 html {
   font-size: 62.5%;
 
-  @include mq(sp) {
-    font-size: 50%;
+  @include mq(tab) {
   }
 }
 
@@ -131,7 +130,8 @@ a {
   }
 }
 
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
   border: none;

@@ -4,11 +4,22 @@
 	background: $color-header-bg;
 	top: 0;
 	left: 0;
-	height: $header-height;
+  height: $header-height-sp;
 	z-index: map-get($layer, "header");
 
-	@include mq(tab) {
-		height: $header-height-sp;
-	}
-}
+	@include mq(menu) {
+    height: $header-height;
+  }
 
+  &__inner {
+    padding: 0 20px;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+    @include mq(menu) {
+      padding: 0;
+    }
+  }
+}

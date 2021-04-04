@@ -1,13 +1,13 @@
 // 色
-$drawer-bar-background: #424242;
-$drawer-bar-font-color: #424242;
-$drawer-content-background: #fff;
-$drawer-content-font-color: #424242;
-$drawer-background-color: rgba(0, 0, 0, 0.25);
+$drawer-bar-background: #333;
+$drawer-bar-font-color: $white;
+$drawer-content-background: transparent;
+$drawer-content-font-color: $white;
+$drawer-background-color: rgba(140, 118, 101, 0.9);
 
 // サイズ
 $drawer-bar-space: 5px;
-$drawer-bar-width: 25px;
+$drawer-bar-width: 24px;
 $drawer-bar-height: 3px;
 $drawer-content-width: 200px;
 
@@ -80,13 +80,13 @@ $is-bar-text-show: false;
   // top: 0;
   right: 0;
   left: 0;
+  background: linear-gradient(to right, transparent 0%, transparent 4px, $drawer-bar-background 4px, $drawer-bar-background 100%);
 
   &,
   &::before,
   &::after {
     position: absolute;
     display: block;
-    background: $drawer-bar-background;
     width: 100%;
     height: $drawer-bar-height;
     border-radius: 3px;
@@ -100,11 +100,13 @@ $is-bar-text-show: false;
 
   &::before {
     top: -$drawer-bar-height - $drawer-bar-space;
+    background: $drawer-bar-background;
     // top: 0;
   }
 
   &::after {
     top: $drawer-bar-height + $drawer-bar-space;
+    background: linear-gradient(to right, transparent 0%, transparent 8px, $drawer-bar-background 8px, $drawer-bar-background 100%);
   }
 
   .is-opened & {
@@ -113,16 +115,18 @@ $is-bar-text-show: false;
     &::before {
       top: 8px - $drawer-bar-height - $drawer-bar-space;
       transform: rotate(-45deg);
+      background: $white;
     }
 
     &::after {
       top: 8px - $drawer-bar-height - $drawer-bar-space;
       transform: rotate(45deg);
+      background: $white;
     }
   }
 }
 
-@include mq(sp) {
+@include mq(menu-sp) {
   .drawer-bg {
     transition: all 0.3s ease 0s;
 
@@ -150,7 +154,8 @@ $is-bar-text-show: false;
     background: $drawer-content-background;
     transition: all 0.5s ease 0s;
     padding-top: $header-height-sp;
-    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
     color: $drawer-content-font-color;
 
     &.is-opened {
@@ -175,5 +180,8 @@ $is-bar-text-show: false;
   }
 
   .drawer-content--cover {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
   }
 }

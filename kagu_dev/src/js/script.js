@@ -50,6 +50,7 @@ jQuery(function () {
 
     // ドロワー開時にbody要素がスクロールしないように
     (jQuery(`.${targetClass}`).hasClass(addClass) ? jQuery('body').addClass('u-overflowHidden') : jQuery('body').removeClass('u-overflowHidden'));
+    (jQuery(`.${targetClass}`).hasClass(addClass) ? jQuery('.p-header__logo').addClass('drawer-opened') : jQuery('.p-header__logo').removeClass('drawer-opened'));
 
     return false;
   });

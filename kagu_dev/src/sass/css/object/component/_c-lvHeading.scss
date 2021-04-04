@@ -1,3 +1,17 @@
-.c-lv1Heading {}
+@mixin lv1_2-headingBase {
+  text-align: center;
 
-.c-lv2Heading {}
+  & > span {
+    display: block;
+    text-transform: uppercase;
+    font-family: $ff-subTile;
+  }
+}
+
+.c-lv1Heading {
+  @include lv1_2-headingBase;
+}
+
+.c-lv2Heading {
+  @include lv1_2-headingBase;
+}

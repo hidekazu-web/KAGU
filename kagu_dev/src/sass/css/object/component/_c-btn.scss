@@ -1,7 +1,7 @@
 // 色
-$btn-background-color: #424242;
-$btn-border-color: transparent; // transparentにすることでbackground-colorが見える
-$btn-font-color: $white;
+$btn-background-color: $white;
+$btn-border-color: $color-text; // transparentにすることでbackground-colorが見える
+$btn-font-color: $color-text;
 
 // サイズ
 $btn-width: 30rem;
