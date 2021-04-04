@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.99 12.99" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;"><g><g><line x1="7.58" y1="0.5" x2="12.49" y2="0.5"/><polyline points="10.31 8.67 10.31 12.49 0.5 12.49 0.5 2.68 4.32 2.68"/><line x1="5.95" y1="7.04" x2="12.42" y2="0.57"/></g></g></svg>

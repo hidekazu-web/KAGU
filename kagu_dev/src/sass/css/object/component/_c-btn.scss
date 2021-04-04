@@ -1,7 +1,7 @@
 // 色
 $btn-background-color: #424242;
 $btn-border-color: transparent; // transparentにすることでbackground-colorが見える
-$btn-font-color: #fff;
+$btn-font-color: $white;
 
 // サイズ
 $btn-width: 30rem;
@@ -35,6 +35,7 @@ $btn-letter-spacing: 0;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease 0s;
+  vertical-align: baseline;
 
   &:not(:disabled) {
     cursor: pointer;
@@ -52,6 +53,26 @@ $btn-letter-spacing: 0;
   // 	padding: 0;
   // 	border: none;
   // }
+}
+
+.c-btn__pre {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 1em;
+  height: auto;
+}
+
+.c-btn__body {
+  vertical-align: baseline;
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.c-btn_append {
+  display: inline-block;
+  width: 1em;
+  height: auto;
+  margin-left: 0.5em;
 }
 
 /************************************************************************
@@ -123,15 +144,16 @@ $btn-letter-spacing: 0;
   position: relative;
   display: inline-block;
   padding: 0.2em 0.3em;
-  border: 1px solid currentColor;
-  color: $color-main;
+  color: #fff;
+  background-color: $color-main;
   text-decoration: none;
+  border: 1px solid transparent;
   transition: all 0.3s;
 
   &:hover,
   &:focus {
-    background-color: $color-main;
-    color: #fff;
+    color: $color-main;
+    border-color: currentColor;
   }
 
   &::before {
@@ -144,4 +166,13 @@ $btn-letter-spacing: 0;
 
 .c-beforeIconBtn--download::before {
   content: "\f019";
+}
+
+.c-beforeIconBtn--cart {
+  &::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    background: transparent url("../img/common/cart-icon.svg") no-repeat center center / cover;
+  }
 }

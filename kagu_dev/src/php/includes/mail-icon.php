@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.8 22.35" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;"><g><g><polyline points="28.68 6.91 28.68 21.35 1 21.35 1 1 28.8 1 14.96 13.11 1 1"/></g></g></svg>
