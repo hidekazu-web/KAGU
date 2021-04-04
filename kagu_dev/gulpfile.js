@@ -14,7 +14,8 @@ const sass = require("gulp-dart-sass");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const sassGlob = require("gulp-sass-glob");
-const mmq = require("gulp-merge-media-queries");
+// const mqpacker = require("css-mqpacker");  // メディアクエリをまとめる
+const mmq = require("gulp-merge-media-queries");  // メディアクエリをまとめる
 const gulpStylelint = require("gulp-stylelint");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
@@ -41,10 +42,16 @@ const babel = require('gulp-babel');
 /* typescript */
 const typescript = require("gulp-typescript");
 
+/* webpack */
+const webpackStream = require("webpack-stream");
+const webpack = require("webpack");
+const webpackConfig = require("./webpack.config"); /* webpackの設定ファイルの読み込み */
+
 /* imagemin */
 const imagemin = require("gulp-imagemin");
 const imageminPngquant = require("imagemin-pngquant");
 const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminSvgo = require("imagemin-svgo");
 
 /* browser-sync */
 const browserSync = require("browser-sync").create();
@@ -207,6 +214,7 @@ function sassFunc() {
       })
     ]))
     .pipe(postcss([cssdeclsort({ order: "smacss" })]))
+    // .pipe(postcss([mqpacker()])) // メディアクエリをまとめる
     .pipe(mmq())
     .pipe(
       gulpStylelint({
@@ -269,10 +277,17 @@ function js() {
     .pipe(browserSync.reload({ stream: true }));
 };
 
+/* webpack */
+function webpackFunc() {
+  return webpackStream(webpackConfig, webpack)
+    .pipe(dest("./dist"));
+};
+
 // image===========================================
 const imageminOption = [
   imageminPngquant({ quality: [0.65, 0.8] }),
   imageminMozjpeg({ quality: 85 }),
+  // imageminSvgo({ plugins: [{ removeViewbox: false }] }),
   imagemin.gifsicle({
     interlaced: false,
     optimizationLevel: 1,
@@ -281,7 +296,7 @@ const imageminOption = [
   imagemin.mozjpeg(),
   imagemin.optipng(),
   imagemin.svgo({
-    removeVieweBox: false
+    removeViewBox: false
   }),
   imagemin.gifsicle(),
 ];
@@ -297,14 +312,14 @@ function imageminFunc() {
 
 /// マップファイル除去 ////////////////////////////////////////////
 const cleanMap = () => {
-  return del([PATHS.styles.map, PATHS.js.map, PATHS.styles.mapwp, PATHS.js.mapwp], {force: true});
+  return del([PATHS.styles.map, PATHS.js.map, PATHS.styles.mapwp, PATHS.js.mapwp], { force: true });
 };
 
 /**
  * dist をクリーンアップ
  */
 const distClean = () => {
-  return del([PATHS.pug.dest, PATHS.php.destwp], {force: true});
+  return del([PATHS.pug.dest, PATHS.php.destwp], { force: true });
 }
 
 // server===========================================
@@ -383,6 +398,7 @@ exports.ejs = ejsFunc;
 exports.sass = sassFunc;
 exports.ts = ts;
 exports.js = js;
+exports.webpack = webpackFunc;
 exports.imagemin = imageminFunc;
 exports.cleanmap = cleanMap;
 exports.distclean = distClean;

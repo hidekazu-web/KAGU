@@ -1,3 +1,9 @@
+// import Swiper JS
+import Swiper from 'swiper/swiper-bundle';
+
+// import Swiper styles
+import 'swiper/swiper-bundle.min.css';
+
 // ローディング判定
 jQuery(window).on("load", function () {
   jQuery("body").attr("data-loading", "true");
@@ -79,15 +85,15 @@ jQuery(function () {
 
   // accordion を閉じておく
   /* jQueryが動作しなかった場合のためにCSSではdisplay none をせずにjqueryで閉じる */
-  $('.js-accordion').each(function (index, element) {
-    $(this).next().hide();
-    $(this).addClass('is-closed');
+  jQuery('.js-accordion').each(function (index, element) {
+    jQuery(this).next().hide();
+    jQuery(this).addClass('is-closed');
   });
   // accordion
-  $('.js-accordion').on('click', function () {
-    $target = $(this).data("target");
-    $(this).nextAll('.' + $target).slideToggle();
-    $(this).toggleClass('is-closed');
+  jQuery('.js-accordion').on('click', function () {
+    $target = jQuery(this).data("target");
+    jQuery(this).nextAll('.' + $target).slideToggle();
+    jQuery(this).toggleClass('is-closed');
   });
 
   /* 電話リンク */
@@ -167,4 +173,16 @@ jQuery(function () {
     });
   })();
 
+  /* slider */
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    },
+  });
 });

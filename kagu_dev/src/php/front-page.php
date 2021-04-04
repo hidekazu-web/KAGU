@@ -13,15 +13,14 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <section class="p-section p-fv">
-          <?php $fv_images = post_custom('fv-images');
+          <?php $fv_images = scf::get('fv-images');
           if ($fv_images) : ?>
             <div class="swiper-container p-fv__slider">
               <div class="swiper-wrapper p-fv__slideWrapper">
                 <?php foreach ($fv_images as $image) : ?>
-                  <div class="swiper-slide p-fv__slideImg"><img src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'large')[0]; ?>"></div>
+                  <div class="swiper-slide p-fv__slideImg"><img src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?>"></div>
                 <?php endforeach; ?>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
           <?php endif; ?>
         </section><!-- /.p-section p-fv -->
