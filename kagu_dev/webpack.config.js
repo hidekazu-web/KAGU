@@ -4,6 +4,19 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   use: [
+      //     {
+      //       loader: 'babel-loader',
+      //       options: {
+      //         presets: [
+      //           ['env', { 'modules': false }]
+      //         ]
+      //       }
+      //     }
+      //   ],
+      // },
       {
         test: /\.js$/,
         use: [
@@ -11,11 +24,11 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                ['env', { 'modules': false }]
+                ['@babel/preset-env', { 'modules': false}]// デフォルトでES5になるはず
               ]
             }
           }
-        ],
+        ]
       },
       {
         test: /\.css/,
