@@ -260,10 +260,10 @@ function js() {
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(concat("script.js"))
     .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(uglify({ output: { comments: saveLicense } }))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
+    // .pipe(uglify({ output: { comments: saveLicense } }))
     // .pipe(uglify({ output: { comments: /^!/ } }))
     // .pipe(uglify({ output: { comments: 'some' } }))
     // .pipe(
