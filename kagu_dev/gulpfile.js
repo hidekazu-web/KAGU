@@ -259,6 +259,7 @@ function js() {
     .pipe(order([PATHS.js.core, PATHS.js.app], { base: "./" }))
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(concat("script.js"))
+    .pipe(webpackStream(webpackConfig, webpack))
     .pipe(babel({
       presets: ['@babel/env']
     }))
