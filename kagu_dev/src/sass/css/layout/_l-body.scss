@@ -1,11 +1,11 @@
 body {
-  margin-top: $header-height;
-  min-height: calc(100vh - #{$header-height});
+  margin-top: $header-height-sp;
+  min-height: calc(100vh - #{$header-height-sp});
   display: flex;
   flex-direction: column;
 
-  @include mq(tab) {
-    margin-top: $header-height-sp;
-    min-height: calc(100vh - #{$header-height-sp});
+  @include mq(menu) {
+    margin-top: $header-height;
+    min-height: calc(100vh - #{$header-height});
   }
 }

@@ -18,11 +18,16 @@
             <div class="swiper-container p-fv__slider">
               <div class="swiper-wrapper p-fv__slideWrapper">
                 <?php foreach ($fv_images as $image) : ?>
-                  <div class="swiper-slide p-fv__slideImg"><img src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?>"></div>
+                  <div class="swiper-slide p-fv__slideImg"><img srcset="<?php echo wp_get_attachment_image_src($image['fv-image-sp'], 'medium_large')[0]; ?> 959w, <?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?> 1500w" src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?>"></div>
                 <?php endforeach; ?>
               </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
             </div>
           <?php endif; ?>
+          <div class="l-container p-fv__container">
+            <p class="p-fv__text">自分らしさを<br class="u-hidden--pc">レイアウトする</p><!-- /.p-fv__text -->
+          </div><!-- /.l-container -->
         </section><!-- /.p-section p-fv -->
 
         <section class="p-section p-newsSection">

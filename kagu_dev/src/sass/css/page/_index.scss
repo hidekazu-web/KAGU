@@ -1,0 +1,68 @@
+/************************************************************************
+* p-fv
+************************************************************************/
+.p-fv {
+  height: 36rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #8c7665;
+    opacity: 0.2;
+    z-index: 1;
+  }
+
+  @include mq(pc) {
+    height: (610/1500 * 100%);
+  }
+}
+
+.p-fv__slider {
+  height: 100%;
+}
+
+.p-fv__slideWrapper {
+  height: 100%;
+}
+
+.p-fv__slideImg {
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right bottom;
+
+    @include mq(pc) {
+      width: 100%;
+    }
+  }
+}
+
+.p-fv__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.p-fv__text {
+  z-index: 2;
+  color: $white;
+  font-family: $ff-serif;
+  font-size: 2.4rem;
+
+  @include mq(pc) {
+    font-size: 3rem;
+  }
+}
