@@ -11,6 +11,27 @@
 }
 
 .p-section__title {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15em;
+
+  & > span {
+    display: block;
+    text-transform: uppercase;
+    font-family: $ff-subTile;
+    font-weight: $fw-bold;
+    color: $color-secondary;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+  }
+
+  @include mq(pc) {
+    font-size: 24px;
+
+    & > span {
+      font-size: 15px;
+    }
+  }
 }
 
 .p-section__main {
@@ -18,5 +39,12 @@
 
   @include mq(pc) {
     margin-top: 60px;
+  }
+}
+
+
+.p-section__title.p-cta__title {
+  & > span {
+    color: inherit;
   }
 }

@@ -102,7 +102,7 @@
 
   &:hover,
   &:focus {
-    .p-card__img > img {
+    & img {
       transform: translateY(-50%) scale(1.1);
     }
   }

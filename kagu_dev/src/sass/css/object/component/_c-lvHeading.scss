@@ -1,52 +1,5 @@
-@mixin lv1_2-headingBase {
-  text-align: center;
-
-  & > span {
-    display: block;
-    text-transform: uppercase;
-    font-family: $ff-subTile;
-    font-weight: $fw-bold;
-  }
-}
-
 .c-lv1Heading {
-  @include lv1_2-headingBase;
-  font-size: 24px;
-  letter-spacing: 0.2em;
-  line-height: (54/24);
-  color: $white;
-
-  & > span {
-    letter-spacing: 0.1em;
-    font-size: 14px;
-    line-height: 1;
-  }
-
-  @include mq(pc) {
-    font-size: 36px;
-
-    & > span {
-      font-size: 18px;
-    }
-  }
 }
 
 .c-lv2Heading {
-  @include lv1_2-headingBase;
-  font-size: 20px;
-  letter-spacing: 0.15em;
-
-  & > span {
-    color: $color-secondary;
-    letter-spacing: 0.05em;
-    font-size: 14px;
-  }
-
-  @include mq(pc) {
-    font-size: 24px;
-
-    & > span {
-      font-size: 15px;
-    }
-  }
 }

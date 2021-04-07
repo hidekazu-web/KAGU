@@ -16,7 +16,7 @@
 
         <div class="p-section p-byPhoneSection">
           <div class="l-container p-section__content">
-            <div class="p-section__title c-lv2Heading">電話でのお問い合わせ<span>by phone</span></div><!-- /.p-section__title c-lv2Heading -->
+            <div class="p-section__title">電話でのお問い合わせ<span>by phone</span></div><!-- /.p-section__title-->
             <div class="p-section__main">
               <p class="p-section__text">弊社に関するご質問がございましたら、お気軽にご相談下さい。 </p><!-- /.p-section__text -->
               <div class="p-byPhoneSection__box">
@@ -33,7 +33,7 @@
 
         <div class="p-section p-byMailSection">
           <div class="l-container l-container--semiNarrow">
-            <div class="p-section__title c-lv2Heading">メールでのお問い合わせ<span>by e-mail</span></div><!-- /.p-section__title c-lv2Heading -->
+            <div class="p-section__title">メールでのお問い合わせ<span>by e-mail</span></div><!-- /.p-section__title-->
             <div class="p-section__main">
               <p class="p-section__text">
                 家具のご購入、採用について等お気軽にご相談下さい。<br>

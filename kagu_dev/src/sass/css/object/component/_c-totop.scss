@@ -8,7 +8,7 @@
   transition: all 0.3s ease 0s;
   width: 5rem;
   height: 5rem;
-  background-color: $color-secondary;
+  background-color: $color-main;
 
   &::before {
     content: "";
@@ -24,11 +24,11 @@
 
   &.is-active {
     visibility: visible;
-    opacity: 1;
+    opacity: $opacity;
 
     &:hover,
     &:focus {
-      opacity: $opacity;
+      opacity: 1;
     }
   }
 }

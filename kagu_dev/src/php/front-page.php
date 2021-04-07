@@ -34,7 +34,7 @@
           <div class="l-container l-container--narrow p-section__content p-newsSection__content">
             <div class="c-box">
               <?php $post_object = get_post_type_object('news'); ?>
-              <h2 class="p-section__title c-lv2Heading"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
+              <h2 class="p-section__title"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
               <?php
               $args = array(
                 'post_type' => 'news',
@@ -83,7 +83,7 @@
 
         <section class="p-section p-furnitureSection">
           <div class="l-container p-section__content">
-            <h2 class="p-section__title c-lv2Heading">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
+            <h2 class="p-section__title">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
             <div class="p-section__main">
 
               <div class="p-alternate p-furnitureSection__content">
@@ -99,7 +99,7 @@
                       モダン、ナチュラル、北欧、ヴィンテージ、和風、ハワイアン、アメリカン、ミニマルなど、テーマごとに家具をお探しいただけます。
                     </p><!-- /.p-alternate__itemText -->
                     <div class="p-alternate__itemFooter">
-                      <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
+                      <a href="<?php echo esc_html(home_url('/furniture')); ?>" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
                     </div><!-- /.p-alternate__itemFooter -->
                   </div><!-- /.p-alternate__itemSecondary -->
                 </div><!-- /.p-alternate__item -->
@@ -116,7 +116,7 @@
                       レッド、ブルー、グリーン、イエロー、オレンジ、ピンク、パープル、ベージュ・アイボリー、ブラウン、ブラック、グレー、ホワイトなど、好みのカラーごとに家具をお探しいただけます。
                     </p><!-- /.p-alternate__itemText -->
                     <div class="p-alternate__itemFooter">
-                      <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
+                      <a href="<?php echo esc_html(home_url('/furniture')); ?>" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
                     </div><!-- /.p-alternate__itemFooter -->
                   </div><!-- /.p-alternate__itemSecondary -->
                 </div><!-- /.p-alternate__item -->
@@ -131,7 +131,7 @@
                       「リビング」や「ダイニング」、「寝室・ベッドルーム」、「キッチン」、「玄関・エントランス」、「書斎・ホームオフィス」などのシーンから、それぞれのシーンで使用する家具をお探しいただけます。
                     </p><!-- /.p-card__text -->
                     <div class="p-card__footer">
-                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                      <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="c-btn c-btn--outerLink">ONLINE STORE</a>
                     </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
                 </div><!-- /.p-card p-col__item -->
@@ -143,7 +143,7 @@
                       他では出会えないソファやチェアが見つかります。<br>当社ブランド以外でも、セレクトラインアップの中で多数のブランドをお取扱いしております。
                     </p><!-- /.p-card__text -->
                     <div class="p-card__footer">
-                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                      <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="c-btn c-btn--outerLink">ONLINE STORE</a>
                     </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
                 </div><!-- /.p-card p-col__item -->
@@ -155,7 +155,7 @@
                       チークやパイン、マホガニーやウォールナットなどの木材から、ファブリックやラタンなどの布・繊維、ステンレスやロートアイアンのような金属まで、あらゆる素材を使用した家具を取り揃えております。
                     </p><!-- /.p-card__text -->
                     <div class="p-card__footer">
-                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                      <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="c-btn c-btn--outerLink">ONLINE STORE</a>
                     </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
                 </div><!-- /.p-card p-col__item -->
@@ -166,26 +166,26 @@
 
         <section class="p-section p-shopSection">
           <div class="l-container p-section__content">
-            <div class="p-media">
+            <a href="<?php echo esc_html(home_url('/store')) ?>"  class="p-media p-media--link p-shopSection__item">
               <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_store.jpg" alt="ショールーム"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
                 <div class="p-media__title">販売店・展示場一覧</div><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの販売店をご覧いただけます。<br>また、KAGUの家具は全国のショールームにてご覧いただけます。</div><!-- /.p-media__text -->
                 <div class="p-media__footer">
-                  <a href="" class="p-media__link c-afterIcon c-afterIcon--arrow">販売店・展示場一覧を見る</a><!-- /.p-media__link -->
+                  <span class="c-afterIcon c-afterIcon--arrowRight">販売店・展示場一覧を見る</span>
                 </div><!-- /.p-media__footer -->
               </div><!-- /.p-media__body -->
-            </div><!-- /.p-media -->
-            <div class="p-media">
+            </a><!-- /.p-media -->
+            <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="p-media p-media--link p-shopSection__item">
               <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_online.jpg" alt="オンラインストア"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
                 <div class="p-media__title">ONLINE STORE</div><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの家具はオンラインストアでもご購入いただけます。</div><!-- /.p-media__text -->
                 <div class="p-media__footer">
-                  <a href="" target="_blank" rel="noopener noreferrer" class="p-media__link c-afterIcon c-afterIcon--outerLink">オンラインストアを見る</a><!-- /.p-media__link -->
+                  <span class="c-afterIcon c-afterIcon--outerLink">オンラインストアを見る</span>
                 </div><!-- /.p-media__footer -->
               </div><!-- /.p-media__body -->
-            </div><!-- /.p-media -->
+            </a><!-- /.p-media -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section p-shopSection -->
 

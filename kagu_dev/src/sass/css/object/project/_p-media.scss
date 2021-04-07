@@ -2,18 +2,22 @@
 * 基本形
 ************************************************************************/
 .p-media {
-  padding: 2rem;
-  background-color: #f6f6f6;
-  display: flex;
-  align-items: flex-start;
+  @include mq(pc) {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .p-media__img {
   position: relative;
-  flex: 0 0 25%;
   height: 0;
-  padding-top: 25%;
+  padding-top: (200/380 * 100%);
   overflow: hidden;
+
+  @include mq(pc) {
+    flex: 0 0 (380/1280 * 100%);
+    padding-top: (200/380 * 380/1280 * 100%);
+  }
 
   & > img {
     position: absolute;
@@ -27,7 +31,12 @@
 }
 
 .p-media__body {
-  margin-left: 3.33333%;
+  margin-top: 30px;
+
+  @include mq(pc) {
+    margin-top: 0;
+    margin-left: 3.33333%;
+  }
 
   & > * + * {
     margin-top: 1rem;
@@ -48,17 +57,21 @@
 
 .p-media__title {
   font-size: 2rem;
-  line-height: 1.25;
 }
 
 .p-media__lead {
   font-size: 1.8rem;
-  line-height: 1.25;
 }
 
 .p-media__text {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: $fw-regular;
+}
+
+.p-media__footer {
+  margin-top: 38px;
+  font-weight: $fw-bold;
 }
 
 /************************************************************************
@@ -75,5 +88,20 @@
   & .p-media__body {
     margin-left: 0;
     text-align: right;
+  }
+}
+
+// link -------------------------------------------------------------------
+.p-media--link {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    & img {
+      transform: translateY(-50%) scale(1.1);
+    }
   }
 }

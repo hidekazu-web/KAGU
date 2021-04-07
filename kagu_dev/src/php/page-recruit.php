@@ -15,7 +15,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <section class="p-section p-recruitSection">
-          <div class="p-section__title c-lv2Heading">募集要項<span>requirements</span></div><!-- /.p-section__title c-lv2Heading -->
+          <div class="p-section__title">募集要項<span>requirements</span></div><!-- /.p-section__title-->
           <div class="l-container l-container--narrow p-section__content">
             <div class="p-recruitSection__body">
               <?php $items = scf::get('recruit_guidelines');

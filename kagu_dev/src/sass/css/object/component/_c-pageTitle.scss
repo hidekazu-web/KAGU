@@ -1,0 +1,25 @@
+.c-pageTitle {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  line-height: (54/24);
+  color: $white;
+
+  & > span {
+    display: block;
+    text-transform: uppercase;
+    font-family: $ff-subTile;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @include mq(pc) {
+    font-size: 36px;
+
+    & > span {
+      font-size: 18px;
+    }
+  }
+}

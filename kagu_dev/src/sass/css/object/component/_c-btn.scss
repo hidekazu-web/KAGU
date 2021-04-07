@@ -1,5 +1,5 @@
 // 色
-$btn-background-color: $white;
+$btn-background-color: transparent;
 $btn-border-color: $color-text; // transparentにすることでbackground-colorが見える
 $btn-font-color: $color-text;
 
@@ -48,8 +48,9 @@ $btn-letter-spacing: 0;
   &:hover,
   &:focus {
     outline: none;
-    color: $btn-background-color;
+    color: $white;
     background-color: $btn-font-color;
+    opacity: 1;
     // border-color: currentColor; // その要素もしくは親要素のcolorの値と同じになる
   }
 
@@ -194,5 +195,19 @@ $btn-letter-spacing: 0;
     width: 1em;
     height: 1em;
     background: transparent url("../img/common/cart-icon.svg") no-repeat center center / cover;
+  }
+}
+
+/************************************************************************
+* 特定の部分に内包する
+************************************************************************/
+.p-cta .c-btn {
+  border-color: $white;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #9a8574;
   }
 }

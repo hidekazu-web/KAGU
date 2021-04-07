@@ -2,7 +2,7 @@
   <div class="l-container p-footer">
     <div class="p-footer__main">
       <div class="p-footer__left">
-        <div class="p-footer__logo"><a href="<?php echo esc_html(home_url('/')); ?>"><img src="" alt=""></a></div><!-- /.p-footer__logo -->
+        <div class="p-footer__logo"><a href="<?php echo esc_html(home_url('/')); ?>"><?php get_template_part('includes/site-logo'); ?></a></div><!-- /.p-footer__logo -->
       </div><!-- /.p-footer__left -->
     </div><!-- /.p-footer__main -->
     <div class="p-footer__footer">

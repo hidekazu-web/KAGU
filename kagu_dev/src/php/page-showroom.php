@@ -16,7 +16,7 @@
 
         <section class="p-section p-storeListSection">
           <div class="l-container l-container--narrow p-section__content">
-            <h2 class="c-lv2Heading p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.c-lv2Heading p-section__title -->
+            <h2 class="p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.p-section__title -->
 
             <?php
             $shop_array = array(

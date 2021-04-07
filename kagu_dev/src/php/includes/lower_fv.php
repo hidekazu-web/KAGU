@@ -1,6 +1,6 @@
 <section class="p-lowerFv">
 
-  <h1 class="p-lowerFv__title c-lv1Heading">
+  <h1 class="p-lowerFv__title c-pageTitle">
     <?php if (is_page()) {
       the_title();
     } else {

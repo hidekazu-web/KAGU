@@ -65,3 +65,20 @@
   border-right: 0.125em solid $color-main;
   transform: rotate(45deg) translateY(-50%);
 }
+
+.c-afterIcon--arrowRight::after {
+  content: '';
+  width: 20px;
+  height: 5px;
+  border-color: transparent #333 #333 transparent;
+  border-style: solid;
+  border-width: 1px;
+  transform: skewX(45deg);
+}
+
+.c-afterIcon--outerLink::after {
+  content: '';
+  width: 1em;
+  height: 1em;
+  background: transparent url('../img/common/externalLink-icon.svg') no-repeat center center / contain;
+}
