@@ -1,37 +1,77 @@
 .p-alternate {
-  &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include mq(sp) {
-      display: block;
+  @at-root (without: all) {
+    & {
     }
 
-    &-primary {
-      flex: 0 0 50%;
-    }
+    .p-alternate__item {
+      & + & {
+        margin-top: 60px;
 
-    &-secondary {
-      flex: 0 1 auto;
-
-      @include mq(sp) {
-        max-width: 525px;
-        margin: 0 auto;
-      }
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-
-      & .p-alternate__item-primary {
-
-        @include mq(sp) {
-          // margin-left: 0;
+        @include mq(pc) {
+          margin-top: 80px;
         }
       }
 
-      & .p-alternate__item-secondary {
+      @include mq(pc) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+
+          & .p-alternate__itemPrimary {
+            margin-left: (60/1280 * 100%);
+          }
+
+          & .p-alternate__itemSecondary {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .p-alternate__itemPrimary {
+      @include mq(pc) {
+        flex: 0 0 (610/1280 * 100%);
+      }
+    }
+
+    .p-alternate__itemSecondary {
+      margin-top: 30px;
+
+      @include mq(pc) {
+        flex: 0 1 auto;
+        margin-left: (60/1280 * 100%);
+        margin-top: 0;
+      }
+    }
+
+    .p-alternate__itemTitle {
+      font-size: 20px;
+
+      @include mq(pc) {
+        font-size: 24px;
+      }
+    }
+
+    .p-alternate__itemText {
+      font-size: 15px;
+      font-weight: $fw-regular;
+      margin-top: 29px;
+
+      @include mq(pc) {
+        margin-top: 39px;
+      }
+    }
+
+    .p-alternate__itemFooter {
+      margin-top: 30px;
+      text-align: center;
+
+      @include mq(pc) {
+        margin-top: 60px;
+        text-align: left;
       }
     }
   }

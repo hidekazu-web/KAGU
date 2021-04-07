@@ -5,7 +5,7 @@
   }
 }
 
-@mixin p-col-wrap($num: 4, $mr: 40px, $mt: 40px, $tab_num: 4, $sp_num: 1) {
+@mixin l-flex-wrap($num: 4, $mr: 40px, $mt: 40px, $tab_num: 4, $sp_num: 1) {
   & > * {
     box-sizing: border-box;
   }

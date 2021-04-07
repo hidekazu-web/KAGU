@@ -29,7 +29,7 @@
                 </div><!-- /.p-entry__meta -->
                 <h1 class="p-entry__title"><?php the_title(); ?></h1><!-- /.p-entry__title -->
                 <?php if (has_post_thumbnail()) : ?>
-                  <figure class="p-entry__img c-imgWrap">
+                  <figure class="p-entry__img c-img">
                     <?php the_post_thumbnail('large'); ?>
                   </figure><!-- /.p-entry__img -->
                 <?php endif; ?>

@@ -1,27 +1,27 @@
 .l-container {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 100%;
-  width: $layout-width-container;
-  height: inherit;
+  padding-right: $pd-sp;
+  padding-left: $pd-sp;
 
-  @include mq("tab") {
-    padding-right: $pd-tab;
-    padding-left: $pd-tab;
-  }
-
-  @include mq("sp") {
-    padding-right: $pd-sp;
-    padding-left: $pd-sp;
+  @include mq("pc") {
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+    width: $layout-width-container;
+    height: inherit;
   }
 }
 
 .l-container--narrow {
-  width: $layout-width-container * 0.8;
+  @include mq(pc) {
+    width: $layout-width-container * 0.8;
+  }
 }
 
 .l-container--wide {
-  width: $layout-width-container * 1.2;
+  @include mq(pc) {
+    width: $layout-width-container * 1.2;
+  }
 }
 
 .l-container--full {

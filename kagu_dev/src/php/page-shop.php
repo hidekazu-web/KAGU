@@ -18,7 +18,7 @@
           <div class="l-container l-container--narrow p-section__content">
             <h2 class="c-lv2Heading p-section__title"><?php the_title(); ?><span><?php echo get_post($post->post_parent)->post_name; ?></span></h2><!-- /.c-lv2Heading p-section__title -->
             <div class="p-storeListSection__mapArea p-storeMap">
-              <figure class="p-storeMap__img c-imgWrap"><img src="" alt=""></figure><!-- /.p-storeMap__img c-imgWrap -->
+              <figure class="p-storeMap__img c-img"><img src="" alt=""></figure><!-- /.p-storeMap__img c-img -->
               <a href="#hokkaido" class="c-mapBtn">北海道</a><!-- /.c-mapBtn -->
               <a href="#tohoku" class="c-mapBtn">東北</a><!-- /.c-mapBtn -->
               <a href="#hokuriku" class="c-mapBtn">北陸</a><!-- /.c-mapBtn -->

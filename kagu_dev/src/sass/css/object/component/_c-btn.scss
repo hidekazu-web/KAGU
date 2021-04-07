@@ -4,10 +4,10 @@ $btn-border-color: $color-text; // transparentにすることでbackground-color
 $btn-font-color: $color-text;
 
 // サイズ
-$btn-width: 30rem;
+$btn-width: 22rem;
 $btn-border-width: 2px;
 $btn-border-radius: 0;
-$btn-font-size: $fz-base;
+$btn-font-size: 14px;
 $btn-font-weight: $fw-base;
 $btn-letter-spacing: 0;
 
@@ -18,10 +18,10 @@ $btn-letter-spacing: 0;
   appearance: none;
   margin: 0;
   display: inline-block;
-  padding: 1em 2em;
+  padding: calc(1.8rem - (1em * 0.5)) 2rem;
   // テキストに応じて大きさを動的に変える場合はwidthを指定しない
   // width: $btn-width;      // ボタンの大きさを固定したい場合（テキストが多いと改行する）
-  // min-width: $btn-width;  // ボタンの最小の大きさを指定する場合
+  min-width: $btn-width;  // ボタンの最小の大きさを指定する場合
   // max-width: 100%;        // どんなに大きくても親要素の大きさまでにする
   border: $btn-border-width solid $btn-border-color;
   background-image: none;
@@ -37,6 +37,10 @@ $btn-letter-spacing: 0;
   transition: all 0.3s ease 0s;
   vertical-align: baseline;
 
+  @include mq(pc) {
+    font-size: 15px;
+  }
+
   &:not(:disabled) {
     cursor: pointer;
   }
@@ -46,7 +50,7 @@ $btn-letter-spacing: 0;
     outline: none;
     color: $btn-background-color;
     background-color: $btn-font-color;
-    border-color: currentColor; // その要素もしくは親要素のcolorの値と同じになる
+    // border-color: currentColor; // その要素もしくは親要素のcolorの値と同じになる
   }
 
   // &::-moz-foucus-inner {
@@ -108,6 +112,22 @@ $btn-letter-spacing: 0;
   &:focus {
     border-color: yellow;
     color: #222;
+  }
+}
+
+// 外部リンク -------------------------------------------------------------------
+.c-btn--outerLink {
+  // position: relative;
+
+  &::after {
+    display: inline-block;
+    margin-left: 10px;
+    content: '';
+    width: 1em;
+    height: 1.5em;
+    background: transparent url('../img/common/externalLink-icon.svg') no-repeat center center / contain;
+    position: absolute;
+
   }
 }
 

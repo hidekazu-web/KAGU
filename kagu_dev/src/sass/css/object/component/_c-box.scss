@@ -1,0 +1,9 @@
+.c-box {
+  box-shadow: 0 0 10px rgba(0, 0 ,0, 0.03);
+  padding: 41px 19px;
+  background-color: #fff;
+
+  @include mq(tab) {
+    padding: 80px;
+  }
+}

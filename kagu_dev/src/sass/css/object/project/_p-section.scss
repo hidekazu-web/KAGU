@@ -1,10 +1,22 @@
 .p-section {
 
+  &:nth-of-type(even) {
+    background-color: #f7f6f5;
+  }
 }
 
 .p-section__content {
-  padding: 6rem 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .p-section__title {
+}
+
+.p-section__main {
+  margin-top: 30px;
+
+  @include mq(pc) {
+    margin-top: 60px;
+  }
 }

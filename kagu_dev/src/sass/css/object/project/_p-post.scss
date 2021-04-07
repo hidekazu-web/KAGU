@@ -1,0 +1,35 @@
+/************************************************************************
+* p-post:基本形
+************************************************************************/
+.p-post {
+}
+
+.p-post__link {
+  display: block;
+}
+
+.p-post__meta {
+}
+
+.p-post__date {
+  font-weight: $fw-bold;
+  font-size: 14px;
+  font-family: $ff-accent;
+}
+
+.p-post__label {
+  font-size: 10px;
+  padding: 5px 10px;
+  font-weight: $fw-medium;
+  margin-left: 16px;
+}
+
+.p-post__title {
+  font-size: 14px;
+  line-height: (24/14);
+  margin-top: (14px - ((24/14) * 14px - 14px)/2);
+
+  @include mq(pc) {
+    margin-top: (20px - ((24/14) * 14px - 14px)/2);
+  }
+}

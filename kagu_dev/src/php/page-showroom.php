@@ -51,7 +51,7 @@
                     <?php foreach ($shop_list as $shop) : ?>
                       <li class="p-storeList__item p-storeItem">
                         <div class="p-storeItem__body">
-                          <figure class="p-storeItem__img c-imgWrap"><img src="<?php echo wp_get_attachment_image_src($shop['image'], 'medium')[0] ?>" alt=""></figure><!-- /.p-storeItem__img c-imgWrap -->
+                          <figure class="p-storeItem__img c-img"><img src="<?php echo wp_get_attachment_image_src($shop['image'], 'medium')[0] ?>" alt=""></figure><!-- /.p-storeItem__img c-img -->
                           <div class="p-storeItem__title"><?php echo esc_html($shop['title']); ?></div><!-- /.p-storeItem__title -->
                           <address class="p-storeItem__address">
                             <div class="p-storeItem__post"><?php echo esc_html($shop['postalCode']); ?></div><!-- /.p-storeItem__post -->

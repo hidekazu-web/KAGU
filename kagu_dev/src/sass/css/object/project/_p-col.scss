@@ -2,8 +2,73 @@
 * 基本形
 ************************************************************************/
 .p-col {
-  display: flex;
-  flex-wrap: wrap;
+  @include mq(tab) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+// 2列 -------------------------------------------------------------------
+.p-col--col2 {
+  $num: 2;
+  $mr: 10%;
+  $mt: (50px - ((24/14) * 14px - 14px)/2);
+  $sp_mt: (30px - ((24/14) * 14px - 14px)/2);
+  $tab_num: 2;
+  $sp_num: 1;
+  $margin-num: $num - 1;
+  $row-num: $num + 1;
+
+  @include mq(pc) {
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$num} - 1px);
+      &:not(:nth-child(#{$num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(tab-only) {
+    $margin-num: $tab_num - 1;
+    $row-num: $tab_num + 1;
+
+    & > .p-col__item {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$tab_num} - 1px);
+      &:not(:nth-child(#{$tab_num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(sp) {
+    @if $sp_num == 1 {
+      & > .p-col__item + .p-col__item {
+        margin-top: $sp_mt;
+      }
+    } @else {
+      $margin-num: $sp_num - 1;
+      $row-num: $sp_num + 1;
+
+      & > .p-col__item {
+        width: calc((100% - #{$mr} * #{$margin-num}) / #{$sp_num} - 1px);
+        &:not(:nth-child(#{$sp_num}n)) {
+          margin-right: $mr;
+        }
+        &:nth-child(n + #{$row-num}) {
+          margin-top: $mt;
+        }
+      }
+    }
+  }
 }
 
 /************************************************************************

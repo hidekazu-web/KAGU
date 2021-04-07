@@ -31,108 +31,143 @@
         </section><!-- /.p-section p-fv -->
 
         <section class="p-section p-newsSection">
-          <div class="l-container l-container--narrow p-section__content c-box">
-            <?php $post_object = get_post_type_object('news'); ?>
-            <h2 class="p-section__title c-lv2Heading"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
-            <?php
-            $args = array(
-              'post_type' => 'news',
-              'post_status' => 'publish',
-              'posts_per_page' => 4,
-              'order' => 'DESC',
-              'orderby' => 'date',
-            );
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) : ?>
-              <ul class="p-newsSection__list p-section__main c-box__inner p-col p-col--col2">
-                <?php
-                while ($the_query->have_posts()) : $the_query->the_post();
-                ?>
+          <div class="l-container l-container--narrow p-section__content p-newsSection__content">
+            <div class="c-box">
+              <?php $post_object = get_post_type_object('news'); ?>
+              <h2 class="p-section__title c-lv2Heading"><?php echo esc_html($post_object->label); ?><span><?php echo esc_html($post_object->name); ?></span></h2><!-- /.p-section__title -->
+              <?php
+              $args = array(
+                'post_type' => 'news',
+                'post_status' => 'publish',
+                'posts_per_page' => 4,
+                'order' => 'DESC',
+                'orderby' => 'date',
+              );
+              $the_query = new WP_Query($args);
+              if ($the_query->have_posts()) : ?>
+                <ul class="p-newsSection__list p-section__main c-box__inner p-col p-col--col2">
+                  <?php
+                  while ($the_query->have_posts()) : $the_query->the_post();
+                  ?>
 
-                  <li class="p-col__item">
-                    <a href="<?php the_permalink(); ?>" class="p-newsSection__itemLink">
+                    <li class="p-col__item">
                       <article class="p-post p-post--col">
-                        <div class="p-post__meta">
-                          <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
-                          <?php
-                          $terms = get_the_terms(get_the_ID(), 'news_tax');
-                          if ($terms[0]) :
-                          ?>
-                            <span class="p-post__label c-label"><?php echo esc_html($terms[0]->name); ?></span><!-- /.p-post__label -->
-                          <?php endif; ?>
-                        </div><!-- /.p-post__meta -->
-                        <h3 class="p-post__title"><?php the_title(); ?></h3><!-- /.p-post__title -->
+                        <a href="<?php the_permalink(); ?>" class="p-post__link p-newsSection__itemLink">
+                          <div class="p-post__meta">
+                            <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
+                            <?php
+                            $terms = get_the_terms(get_the_ID(), 'news_tax');
+                            if ($terms[0]) :
+                            ?>
+                              <span class="p-post__label c-label"><?php echo esc_html($terms[0]->name); ?></span><!-- /.p-post__label -->
+                            <?php endif; ?>
+                          </div><!-- /.p-post__meta -->
+                          <h3 class="p-post__title"><?php the_title(); ?></h3><!-- /.p-post__title -->
+                        </a>
                       </article><!-- /.p-post p-post--col -->
-                    </a>
-                  </li><!-- /.p-post-->
+                    </li><!-- /.p-post-->
 
-                <?php endwhile;
-                wp_reset_postdata(); ?>
-              </ul><!-- /.p-newsSection__list -->
-            <?php else : ?>
-              <!-- 投稿がないときの処理 -->
-              <p>投稿がありません</p>
-            <?php endif;  ?>
-            <div class="p-newsSection__footer">
-              <a href="<?php echo esc_html(get_post_type_archive_link('news')); ?>" class="c-btn"><?php echo esc_html($post_object->label); ?>一覧</a><!-- /.btn -->
-            </div><!-- /.p-newsSection__footer -->
-          </div><!-- /.l-container l-container--narrow p-newsSection__content c-box -->
+                  <?php endwhile;
+                  wp_reset_postdata(); ?>
+                </ul><!-- /.p-newsSection__list -->
+              <?php else : ?>
+                <!-- 投稿がないときの処理 -->
+                <p>投稿がありません</p>
+              <?php endif;  ?>
+              <div class="p-newsSection__footer">
+                <a href="<?php echo esc_html(get_post_type_archive_link('news')); ?>" class="c-btn"><?php echo esc_html($post_object->label); ?>一覧</a><!-- /.btn -->
+              </div><!-- /.p-newsSection__footer -->
+            </div><!-- /.c-box -->
+          </div><!-- /.l-container l-container--narrow p-newsSection__content -->
         </section><!-- /.p-section p-newsSection -->
 
         <section class="p-section p-furnitureSection">
           <div class="l-container p-section__content">
             <h2 class="p-section__title c-lv2Heading">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
-            <div class="p-alternate p-section__main">
-              <div class="p-alternate__item p-furnitureSection__item">
-                <figure class="p-alternate__item-primary"><img src="" alt=""></figure><!-- /.p-alternate__item-primary -->
-                <div class="p-alternate__item-secondary">
-                  <h3 class="p-furnitureSection__itemTitle">テーマで探す</h3><!-- /.p-furnitureSection__itemTitle -->
-                  <p class="p-furnitureSection__itemText">モダン、ナチュラル、北欧、ヴィンテージ、和風、ハワイアン、アメリカン、ミニマルなど、テーマごとに家具をお探しいただけます。</p><!-- /.p-furnitureSection__itemText -->
-                  <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
-                </div><!-- /.p-alternate__item-secondary -->
-              </div><!-- /.p-alternate__item -->
-              <div class="p-alternate__item p-furnitureSection__item">
-                <figure class="p-alternate__item-primary"><img src="" alt=""></figure><!-- /.p-alternate__item-primary -->
-                <div class="p-alternate__item-secondary">
-                  <h3 class="p-furnitureSection__itemTitle">カラーで探す</h3><!-- /.p-furnitureSection__itemTitle -->
-                  <p class="p-furnitureSection__itemText">レッド、ブルー、グリーン、イエロー、オレンジ、ピンク、パープル、ベージュ・アイボリー、ブラウン、ブラック、グレー、ホワイトなど、好みのカラーごとに家具をお探しいただけます。</p><!-- /.p-furnitureSection__itemText -->
-                  <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
-                </div><!-- /.p-alternate__item-secondary -->
-              </div><!-- /.p-alternate__item -->
-              <div class="p-col p-col--col3">
-                <div class="p-card p-furnitureSection__item">
-                  <figure class="p-card__img"><img src="" alt=""></figure><!-- /.p-card__img -->
+            <div class="p-section__main">
+
+              <div class="p-alternate p-furnitureSection__content">
+                <div class="p-alternate__item p-furnitureSection__item">
+                  <figure class="p-alternate__itemPrimary">
+                    <div class="c-img">
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/front/img_furniture_01.jpg" alt="家具のレイアウト例イメージ">
+                    </div><!-- /.c-img -->
+                  </figure><!-- /.p-alternate__itemPrimary -->
+                  <div class="p-alternate__itemSecondary">
+                    <h3 class="p-alternate__itemTitle">テーマで探す</h3><!-- /.p-alternate__itemTitle -->
+                    <p class="p-alternate__itemText">
+                      モダン、ナチュラル、北欧、ヴィンテージ、和風、ハワイアン、アメリカン、ミニマルなど、テーマごとに家具をお探しいただけます。
+                    </p><!-- /.p-alternate__itemText -->
+                    <div class="p-alternate__itemFooter">
+                      <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
+                    </div><!-- /.p-alternate__itemFooter -->
+                  </div><!-- /.p-alternate__itemSecondary -->
+                </div><!-- /.p-alternate__item -->
+
+                <div class="p-alternate__item p-furnitureSection__item">
+                  <figure class="p-alternate__itemPrimary">
+                    <div class="c-img">
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/front/img_furniture_02.jpg" alt="販売家具">
+                    </div><!-- /.c-img -->
+                  </figure><!-- /.p-alternate__itemPrimary -->
+                  <div class="p-alternate__itemSecondary">
+                    <h3 class="p-alternate__itemTitle">カラーで探す</h3><!-- /.p-alternate__itemTitle -->
+                    <p class="p-alternate__itemText">
+                      レッド、ブルー、グリーン、イエロー、オレンジ、ピンク、パープル、ベージュ・アイボリー、ブラウン、ブラック、グレー、ホワイトなど、好みのカラーごとに家具をお探しいただけます。
+                    </p><!-- /.p-alternate__itemText -->
+                    <div class="p-alternate__itemFooter">
+                      <a href="" class="c-btn">取扱い家具の一覧へ</a><!-- /.c-btn -->
+                    </div><!-- /.p-alternate__itemFooter -->
+                  </div><!-- /.p-alternate__itemSecondary -->
+                </div><!-- /.p-alternate__item -->
+              </div><!-- /.p-alternate -->
+
+              <div class="p-col p-col--col3 p-furnitureSection__content">
+                <div class="p-card p-col__item">
+                  <figure class="p-card__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_furniture_03.jpg" alt="シーン"></figure><!-- /.p-card__img -->
                   <div class="p-card__body">
-                    <h3 class="p-card__title p-furnitureSection__itemTitle">シーンで探す</h3><!-- /.p-card__title p-furnitureSection__itemTitle -->
-                    <p class="p-card__text p-furnitureSection__itemText">「リビング」や「ダイニング」、「寝室・ベッドルーム」、「キッチン」、「玄関・エントランス」、「書斎・ホームオフィス」などのシーンから、それぞれのシーンで使用する家具をお探しいただけます。</p><!-- /.p-card__text p-furnitureSection__itemText -->
-                    <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    <h3 class="p-card__title">シーンで探す</h3><!-- /.p-card__title -->
+                    <p class="p-card__text">
+                      「リビング」や「ダイニング」、「寝室・ベッドルーム」、「キッチン」、「玄関・エントランス」、「書斎・ホームオフィス」などのシーンから、それぞれのシーンで使用する家具をお探しいただけます。
+                    </p><!-- /.p-card__text -->
+                    <div class="p-card__footer">
+                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
-                </div><!-- /.p-card p-furnitureSection__item -->
-                <div class="p-card p-furnitureSection__item">
-                  <figure class="p-card__img"><img src="" alt=""></figure><!-- /.p-card__img -->
+                </div><!-- /.p-card p-col__item -->
+                <div class="p-card p-col__item">
+                  <figure class="p-card__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_furniture_04.jpg" alt="ブランド"></figure><!-- /.p-card__img -->
                   <div class="p-card__body">
-                    <h3 class="p-card__title p-furnitureSection__itemTitle">ブランドで探す</h3><!-- /.p-card__title p-furnitureSection__itemTitle -->
-                    <p class="p-card__text p-furnitureSection__itemText">他では出会えないソファやチェアが見つかります。<br>当社ブランド以外でも、セレクトラインアップの中で多数のブランドをお取扱いしております。</p><!-- /.p-card__text p-furnitureSection__itemText -->
-                    <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    <h3 class="p-card__title">ブランドで探す</h3><!-- /.p-card__title -->
+                    <p class="p-card__text">
+                      他では出会えないソファやチェアが見つかります。<br>当社ブランド以外でも、セレクトラインアップの中で多数のブランドをお取扱いしております。
+                    </p><!-- /.p-card__text -->
+                    <div class="p-card__footer">
+                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
-                </div><!-- /.p-card p-furnitureSection__item -->
-                <div class="p-card p-furnitureSection__item">
-                  <figure class="p-card__img"><img src="" alt=""></figure><!-- /.p-card__img -->
+                </div><!-- /.p-card p-col__item -->
+                <div class="p-card p-col__item">
+                  <figure class="p-card__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_furniture_05.jpg" alt="素材"></figure><!-- /.p-card__img -->
                   <div class="p-card__body">
-                    <h3 class="p-card__title p-furnitureSection__itemTitle">素材で探す</h3><!-- /.p-card__title p-furnitureSection__itemTitle -->
-                    <p class="p-card__text p-furnitureSection__itemText">チークやパイン、マホガニーやウォールナットなどの木材から、ファブリックやラタンなどの布・繊維、ステンレスやロートアイアンのような金属まで、あらゆる素材を使用した家具を取り揃えております。</p><!-- /.p-card__text p-furnitureSection__itemText -->
-                    <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    <h3 class="p-card__title">素材で探す</h3><!-- /.p-card__title -->
+                    <p class="p-card__text">
+                      チークやパイン、マホガニーやウォールナットなどの木材から、ファブリックやラタンなどの布・繊維、ステンレスやロートアイアンのような金属まで、あらゆる素材を使用した家具を取り揃えております。
+                    </p><!-- /.p-card__text -->
+                    <div class="p-card__footer">
+                      <a href="" class="c-btn c-btn--outerLink">ONLINE STORE</a>
+                    </div><!-- /.p-card__footer -->
                   </div><!-- /.p-card__body -->
-                </div><!-- /.p-card p-furnitureSection__item -->
+                </div><!-- /.p-card p-col__item -->
               </div><!-- /.p-col p-col--col3 -->
-            </div><!-- /.p-alternate -->
+            </div><!-- /.p-section__main -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section p-furnitureSection -->
 
         <section class="p-section p-shopSection">
           <div class="l-container p-section__content">
             <div class="p-media">
-              <figure class="p-media__img"><img src="" alt=""></figure><!-- /.p-media__img -->
+              <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_store.jpg" alt="ショールーム"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
                 <div class="p-media__title">販売店・展示場一覧</div><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの販売店をご覧いただけます。<br>また、KAGUの家具は全国のショールームにてご覧いただけます。</div><!-- /.p-media__text -->
@@ -142,7 +177,7 @@
               </div><!-- /.p-media__body -->
             </div><!-- /.p-media -->
             <div class="p-media">
-              <figure class="p-media__img"><img src="" alt=""></figure><!-- /.p-media__img -->
+              <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_online.jpg" alt="オンラインストア"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
                 <div class="p-media__title">ONLINE STORE</div><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの家具はオンラインストアでもご購入いただけます。</div><!-- /.p-media__text -->

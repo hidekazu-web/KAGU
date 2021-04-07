@@ -1,0 +1,26 @@
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-main;
+  }
+
+  .swiper-container-horizontal > &.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px;
+  }
+
+  .swiper-container-horizontal>&.swiper-pagination-bullets {
+    bottom: 40px;
+    height: (11px*2+10px);
+
+    @include mq(pc) {
+      bottom: 80px;
+      height: (20px*2+10px);
+    }
+  }
+}
