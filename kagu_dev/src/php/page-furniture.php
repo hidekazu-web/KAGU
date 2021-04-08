@@ -9,6 +9,7 @@
   <?php wp_body_open(); ?>
   <?php get_template_part('includes/head'); ?>
   <?php get_template_part('includes/lower_fv'); ?>
+  <?php get_template_part('includes/breadcrumb'); ?>
 
   <main class="l-main">
 
@@ -17,13 +18,13 @@
         <section class="p-section p-searchTheme">
           <div class="l-container p-section__content">
             <h2 class="p-section__title">テーマで探す<span>SEARCH BY THEME</span></h2><!-- /.p-section__title -->
-            <div class="p-section__main p-col p-col--col3">
-              <div class="p-searchTheme__item p-col__item">
+            <div class="p-section__main p-searchTheme__main">
+              <div class="p-searchTheme__item">
                 <figure class="p-searchTheme__itemImg"><img src="" alt=""></figure><!-- /.p-searchTheme__itemImg -->
                 <div class="p-searchTheme__itemTheme"></div><!-- /.p-searchTheme__itemTheme -->
                 <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="p-searchTheme__link c-afterIcon c-afterIcon--arrow"></a><!-- /.p-searchTheme__link c-afterIcon c-afterIcon--arrow -->
-              </div><!-- /.p-searchTheme__item p-col__item -->
-            </div><!-- /.p-section__main p-col p-col--col3 -->
+              </div><!-- /.p-searchTheme__item -->
+            </div><!-- /.p-section__main -->
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section -->
 

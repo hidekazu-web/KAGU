@@ -9,6 +9,7 @@
   <?php wp_body_open(); ?>
   <?php get_template_part('includes/head'); ?>
   <?php get_template_part('includes/lower_fv'); ?>
+  <?php get_template_part('includes/breadcrumb'); ?>
 
   <main class="l-main">
 

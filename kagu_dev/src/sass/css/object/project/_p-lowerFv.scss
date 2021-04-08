@@ -1,0 +1,19 @@
+/************************************************************************
+* p-lowerFv
+************************************************************************/
+.p-lowerFv {
+  background: transparent url("../img/common/bg_hero.jpg") no-repeat center center / cover;
+  height: 240px;
+  position: relative;
+
+  @include mq(pc) {
+    padding-top: (360/1500 * 100%);
+  }
+}
+
+.p-lowerFv__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

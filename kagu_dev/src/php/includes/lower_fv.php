@@ -17,13 +17,4 @@
       } ?>
     </span>
   </h1><!-- /.p-lowerFv__title -->
-
-  <div class="l-container">
-    <div class="p-breadcrumb">
-      <?php if (function_exists('bcn_display')) {
-        bcn_display();
-      } ?>
-    </div><!-- /.p-breadcrumb -->
-  </div><!-- /.l-container -->
-
 </section><!-- /.p-lowerFv -->

@@ -1,0 +1,11 @@
+.p-breadcrumb {
+  background-color: #b9a393;
+  color: $white;
+  font-size: 12px;
+  line-height: (32/12);
+
+  @include mq(pc) {
+    font-size: 13px;
+    line-height: (32/13);
+  }
+}
