@@ -85,15 +85,16 @@ jQuery(function () {
 
   // accordion を閉じておく
   /* jQueryが動作しなかった場合のためにCSSではdisplay none をせずにjqueryで閉じる */
-  jQuery('.js-accordion').each(function (index, element) {
-    jQuery(this).next().hide();
-    jQuery(this).addClass('is-closed');
+  jQuery('.js-accordion > a').each(function (index, element) {
+    jQuery(this).nextAll('.sub-menu').hide();
+    jQuery(this).parent().addClass('is-closed');
   });
   // accordion
-  jQuery('.js-accordion').on('click', function () {
-    $target = jQuery(this).data("target");
-    jQuery(this).nextAll('.' + $target).slideToggle();
-    jQuery(this).toggleClass('is-closed');
+  jQuery('.js-accordion > a').on('click', function (event) {
+    event.preventDefault();
+    jQuery(this).nextAll('.sub-menu').slideToggle();
+    jQuery(this).parent().toggleClass('is-closed');
+    return false;
   });
 
   /* 電話リンク */

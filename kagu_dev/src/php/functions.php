@@ -43,7 +43,7 @@ add_action('init', function () {
   register_nav_menus(array(
     'global' => 'ヘッダーメニュー',
     // 'drawer' => 'ドロワーメニュー',
-    // 'footer' => 'フッターメニュー'
+    'footer' => 'フッターメニュー'
   ));
 });
 

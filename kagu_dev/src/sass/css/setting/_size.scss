@@ -10,6 +10,7 @@ $breakpoints: (
   "sp": "(max-width: #{$layout-sp-vw})",
   "tab-only": "(min-width: #{$layout-sp-vw + 1px}) and (max-width: #{$layout-width-pc - 1px})",
   "tab": "(min-width: #{$layout-sp-vw + 1px})",
+  "pc-down": "(max-width: #{$layout-width-pc - 1px})",
   "pc": "(min-width: #{$layout-width-pc})",
   "ie": "(-ms-high-contrast: active), (-ms-high-contrast: none)",
   "menu-sp": "(max-width: #{$layout-width-menu})",

@@ -16,3 +16,13 @@
 
 	@return $letter_spacing / $font_size * 1em;
 }
+
+/**
+* line-height を打ち消したmarginを計算する
+* $margin 確保したいmargin
+* $line_height 設定されているline-height
+* $font_size フォントサイズ
+*/
+@function margin($margin, $line_height, $font_size) {
+  @return ($margin - (($line_height - 1) * $font_size) / 2);
+}
