@@ -124,8 +124,10 @@ a {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: $opacity;
   }
 }

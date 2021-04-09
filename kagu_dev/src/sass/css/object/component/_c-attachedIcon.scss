@@ -52,7 +52,7 @@
 .c-afterIcon::after {
   display: inline-block;
   margin-left: 0.3em;
-  color: $color-main;
+  color: inherit;
   font-family: $ff-awesome;
   font-weight: $fw-ultraBold;
 }
@@ -70,7 +70,7 @@
   content: '';
   width: 20px;
   height: 5px;
-  border-color: transparent #333 #333 transparent;
+  border-color: transparent currentColor currentColor transparent;
   border-style: solid;
   border-width: 1px;
   transform: skewX(45deg);

@@ -68,6 +68,7 @@ jQuery(function () {
     let id = jQuery(this).attr("href");
     let target = jQuery("#" == id ? "html" : id);
     let position = target.offset().top - header;
+    jQuery(this).blur();
     if ("fixed" !== jQuery("#header").css("position")) {
       position = target.offset().top;
     }
@@ -80,6 +81,7 @@ jQuery(function () {
       },
       speed
     );
+
     return false;
   });
 

@@ -4,8 +4,6 @@
 
   @include mq("pc") {
     margin: 0 auto;
-    padding-right: 0;
-    padding-left: 0;
     max-width: 100%;
     width: $layout-width-container;
   }
@@ -13,7 +11,7 @@
 
 .l-container--narrow {
   @include mq(pc) {
-    width: $layout-width-container * 0.8;
+    width: $layout-width-container * 0.75;
   }
 }
 
