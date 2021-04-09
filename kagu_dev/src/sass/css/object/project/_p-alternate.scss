@@ -59,6 +59,7 @@
       font-size: 15px;
       font-weight: $fw-regular;
       margin-top: 29px;
+      line-height: (30/15);
 
       @include mq(pc) {
         margin-top: 39px;

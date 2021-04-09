@@ -12,6 +12,7 @@
   color: $color-main;
   width: 110px;
   z-index: map-get($layer, drawer) + 1;
+  line-height: 1;
 
   @include mq(menu) {
     width: 145px;
