@@ -2,7 +2,14 @@
 
   <h1 class="p-lowerFv__title c-pageTitle">
     <?php if (is_page()) {
-      the_title();
+      if ($post->post_parent) {
+        $parent_slug = get_post($post->post_parent)->post_name;
+      }
+      if ('store' === $parent_slug) {
+        echo get_the_title(wp_get_post_parent_id($post));
+      } else {
+        the_title();
+      }
     } else {
       the_archive_title();
     } ?>

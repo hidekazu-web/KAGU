@@ -3,3 +3,15 @@
 
 .c-lv2Heading {
 }
+
+.c-lv3Heading {
+  font-size: 16px;
+  line-height: (24/16);
+  padding: 16px 20px;
+  background-color: #f7f4f3;
+
+  @include mq(tab) {
+    font-size: 24px;
+    padding: 24px 30px;
+  }
+}

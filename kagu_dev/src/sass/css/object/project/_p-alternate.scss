@@ -7,12 +7,12 @@
       & + & {
         margin-top: 60px;
 
-        @include mq(pc) {
+        @include mq(tab) {
           margin-top: 80px;
         }
       }
 
-      @include mq(pc) {
+      @include mq(tab) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +32,7 @@
     }
 
     .p-alternate__itemPrimary {
-      @include mq(pc) {
+      @include mq(tab) {
         flex: 0 0 (610/1280 * 100%);
       }
     }
@@ -40,7 +40,7 @@
     .p-alternate__itemSecondary {
       margin-top: 30px;
 
-      @include mq(pc) {
+      @include mq(tab) {
         flex: 0 1 auto;
         margin-left: (60/1280 * 100%);
         margin-top: 0;
@@ -50,7 +50,7 @@
     .p-alternate__itemTitle {
       font-size: 20px;
 
-      @include mq(pc) {
+      @include mq(tab) {
         font-size: 24px;
       }
     }
@@ -61,7 +61,7 @@
       margin-top: 29px;
       line-height: (30/15);
 
-      @include mq(pc) {
+      @include mq(tab) {
         margin-top: 39px;
       }
     }
@@ -70,7 +70,7 @@
       margin-top: 30px;
       text-align: center;
 
-      @include mq(pc) {
+      @include mq(tab) {
         margin-top: 60px;
         text-align: left;
       }
