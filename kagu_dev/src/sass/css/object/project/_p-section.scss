@@ -7,7 +7,11 @@
 
 .p-section__content {
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 11.7rem;
+
+  @include mq(pc) {
+    padding-bottom: 10rem;
+  }
 }
 
 .p-section__title {

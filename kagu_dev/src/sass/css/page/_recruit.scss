@@ -1,0 +1,16 @@
+.p-recruitSection {
+
+}
+
+.p-recruitSection__body {}
+
+.p-recruitSection__table {}
+
+.p-recruitSection__footer {
+  text-align: center;
+  margin-top: 30px;
+
+  @include mq(pc) {
+    margin-top: 60px;
+  }
+}

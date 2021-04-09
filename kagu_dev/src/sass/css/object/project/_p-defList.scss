@@ -1,0 +1,45 @@
+/************************************************************************
+* p-defList:基本形
+************************************************************************/
+.p-defList {}
+
+.p-defList__row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #e7e0db;
+  font-size: 14px;
+
+  &:last-child {
+    border-bottom: 1px solid #e7e0db;
+  }
+
+  @include mq(pc) {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.p-defList__head {
+  font-weight: $fw-medium;
+
+  @include mq(pc) {
+    flex: 0 0 30%;
+  }
+}
+
+.p-defList__content {
+  margin-top: 12px;
+  font-weight: $fw-regular;
+
+  @include mq(pc) {
+    margin-top: 0;
+  }
+}
+
+.p-defList__text {}
+
+.p-defList__subText {
+  color: #b9a393;
+}
