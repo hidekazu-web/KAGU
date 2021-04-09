@@ -122,6 +122,11 @@
   & + & {
     border-top: 1px solid #d8ccc3;
   }
+
+  @include mq(pc) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .p-storeItem__body {

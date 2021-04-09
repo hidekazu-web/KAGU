@@ -1,4 +1,4 @@
-<header class="l-header">
+<header id="header" class="l-header">
   <div class="l-header__inner">
     <div class="p-header">
       <<?php echo ((is_home() || is_front_page()) ? 'h1' : 'div'); ?> class="p-header__logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php get_template_part('includes/site-logo'); ?></a></<?php echo ((is_home() || is_front_page()) ? 'h1' : 'div'); ?>>
