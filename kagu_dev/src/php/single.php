@@ -24,8 +24,8 @@
                   <?php if (get_the_modified_time('c') !== get_the_time('c')) : ?>
                     <time datetime="<?php the_modified_time('c') ?>" class="p-entry__date p-entry__date--updated"><?php the_modified_time(get_option('date_format')); ?></time><!-- /.p-entry__date -->
                   <?php endif; ?>
-                  <?php if (get_the_terms(get_the_ID(), 'news_tax')) : ?>
-                    <a href="<?php echo esc_url(get_term_link(get_the_terms(get_the_ID(), 'news_tax')[0], 'news_tax')); ?>" class="p-entry__label c-label"><?php echo esc_html(get_the_terms(get_the_ID(), 'news_tax')[0]->name); ?></a><!-- /.p-entry__label -->
+                  <?php if (get_the_terms(get_the_ID(), 'news_archives')) : ?>
+                    <a href="<?php echo esc_url(get_term_link(get_the_terms(get_the_ID(), 'news_archives')[0], 'news_archives')); ?>" class="p-entry__label c-label"><?php echo esc_html(get_the_terms(get_the_ID(), 'news_archives')[0]->name); ?></a><!-- /.p-entry__label -->
                   <?php endif; ?>
                 </div><!-- /.p-entry__meta -->
                 <h1 class="p-entry__title"><?php the_title(); ?></h1><!-- /.p-entry__title -->

@@ -2,13 +2,20 @@
 * p-post:基本形
 ************************************************************************/
 .p-post {
-}
-
-.p-post__link {
-  display: block;
+  @include mq(pc) {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .p-post__meta {
+  display: flex;
+  align-items: baseline;
+
+  @include mq(pc) {
+    flex: 0 0 210px;
+    margin-right: 20px;
+  }
 }
 
 .p-post__date {
@@ -30,6 +37,23 @@
   margin-top: (14px - ((24/14) * 14px - 14px)/2);
 
   @include mq(pc) {
-    margin-top: (20px - ((24/14) * 14px - 14px)/2);
+    margin-top: 0;
+
+  }
+}
+
+/************************************************************************
+* modifier
+************************************************************************/
+//  -------------------------------------------------------------------
+.p-post--col {
+  @include mq(pc) {
+    display: block;
+  }
+
+  .p-post__title {
+    @include mq(pc) {
+      margin-top: (20px - ((24/14) * 14px - 14px)/2);
+    }
   }
 }

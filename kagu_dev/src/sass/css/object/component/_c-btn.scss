@@ -117,6 +117,29 @@ $btn-letter-spacing: 0;
   }
 }
 
+// アーカイブボタン -------------------------------------------------------------------
+.c-btn--archive {
+  color: $color-secondary;
+  border-color: $color-secondary;
+  min-width: initial;
+  padding: calc(1.8rem - (1em * 0.5)) 0.5rem;
+
+  @include mq(pc) {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary;
+  }
+
+  &.isActive {
+    background-color: $color-secondary;
+    color: $white;
+  }
+
+}
+
 // 外部リンク -------------------------------------------------------------------
 .c-btn--outerLink {
   // position: relative;

@@ -21,7 +21,12 @@
         } else {
           echo $post->post_name;
         }
-      } ?>
+      } elseif(is_post_type_archive()) {
+        echo get_query_var('post_type');
+      } elseif(is_tax()) {
+        echo get_query_var('term');
+      }
+      ?>
     </span>
   </h1><!-- /.p-lowerFv__title -->
 </section><!-- /.p-lowerFv -->

@@ -15,6 +15,20 @@
 
     <section class="p-section">
       <div class="l-container l-container--narrow p-section__content">
+        <?php $queried_object = get_queried_object(); // クエリオブジェクトを取得
+        ?>
+        <div class="p-col p-col--col4">
+          <a href="<?php echo get_post_type_archive_link($queried_object->name); ?>" class="p-col__item c-btn c-btn--archive isActive">すべて</a><!-- /.p-col__item c-btn -->
+          <?php $terms = get_terms($queried_object->taxonomies, array(
+            'hide_empty' => false,
+          ));
+          if ($terms) : ?>
+            <?php foreach ($terms as $term) : ?>
+              <a href="<?php echo esc_html(get_term_link($term, $queried_object->taxonomies[0])); ?>" class="p-col__item c-btn c-btn--archive"><?php echo esc_html($term->name); ?></a><!-- /.p-col__item c-btn -->
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </div><!-- /.p-col p-col--col4 -->
+
         <div class="p-section__main">
           <?php if (have_posts()) : ?>
             <?php get_template_part('includes/post-list'); ?>
