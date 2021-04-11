@@ -98,10 +98,10 @@ SCF::add_options_page('展示場', '展示場の登録', 'publish_pages', 'regis
 /**
  * 標準投稿メニューを非表示
  */
-add_action('admin_menu', function () {
-  global $menu;
-  remove_menu_page('edit.php');
-});
+// add_action('admin_menu', function () {
+//   global $menu;
+//   remove_menu_page('edit.php');
+// });
 
 
 /**

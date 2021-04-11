@@ -1,0 +1,27 @@
+.p-pagination {
+  text-align: center;
+
+  & .page-numbers {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    box-sizing: content-box;
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+    font-size: 14px;
+
+    & + .page-numbers {
+      margin-left: 10px;
+
+      @include mq(pc) {
+        margin-left: 20px;
+      }
+    }
+
+    &.current {
+      color: $white;
+      background-color: $color-secondary;
+    }
+  }
+}

@@ -16,6 +16,9 @@
     <section class="p-section">
       <div class="l-container l-container--narrow p-section__content">
         <?php $queried_object = get_queried_object(); // クエリオブジェクトを取得
+        $args = array(
+          'taxonomy' => $queried_object->taxonomies
+        );
         ?>
         <div class="p-col p-col--col4">
           <a href="<?php echo get_post_type_archive_link($queried_object->name); ?>" class="p-col__item c-btn c-btn--archive isActive">すべて</a><!-- /.p-col__item c-btn -->
@@ -31,14 +34,13 @@
 
         <div class="p-section__main">
           <?php if (have_posts()) : ?>
-            <?php get_template_part('includes/post-list'); ?>
+            <?php get_template_part('includes/post-list', null, $args); ?>
           <?php else : ?>
             <!-- 投稿がないときの処理 -->
             <p>投稿がありません</p>
           <?php endif;  ?>
         </div><!-- /.p-section__main -->
       </div><!-- /.l-container l-container--narrow -->
-      <?php get_template_part('includes/pagination'); ?>
     </section><!-- /.p-section -->
 
   </main><!-- /.l-main -->

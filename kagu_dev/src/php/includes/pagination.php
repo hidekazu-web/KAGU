@@ -5,8 +5,8 @@
     echo
       paginate_links(
         array(
-          'end_size' => 1,
-          'mid_size' => 1,
+          'end_size' => 3,
+          'mid_size' => 3,
           'prev_next' => true,
           'prev_text' => '&lt;',
           'next_text' => '&gt;',

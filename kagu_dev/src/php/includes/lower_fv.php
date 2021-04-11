@@ -1,7 +1,10 @@
 <section class="p-lowerFv">
 
   <h1 class="p-lowerFv__title c-pageTitle">
-    <?php if (is_page()) {
+    <?php
+    if(is_home()) {
+      echo 'ブログ';
+    } elseif (is_page()) {
       if ($post->post_parent) {
         $parent_slug = get_post($post->post_parent)->post_name;
       }
@@ -21,9 +24,9 @@
         } else {
           echo $post->post_name;
         }
-      } elseif(is_post_type_archive()) {
+      } elseif (is_post_type_archive()) {
         echo get_query_var('post_type');
-      } elseif(is_tax()) {
+      } elseif (is_tax()) {
         echo get_query_var('term');
       }
       ?>

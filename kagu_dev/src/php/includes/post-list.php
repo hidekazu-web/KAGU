@@ -7,7 +7,7 @@
           <div class="p-post__meta">
             <time class="p-post__date" datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date(get_option('date_format')); ?></time><!-- /.p-post__date -->
             <?php
-            $terms = get_the_terms(get_the_ID(), 'news_archives');
+            $terms = get_the_terms(get_the_ID(), $args['taxonomy']);
             if ($terms[0]) :
             ?>
               <span class="p-post__label c-label"><?php echo esc_html($terms[0]->name); ?></span><!-- /.p-post__label -->
@@ -19,4 +19,7 @@
     </li><!-- /.p-postList__item -->
 
   <?php endwhile; ?>
+  <div class="p-postList__footer">
+    <?php get_template_part('includes/pagination'); ?>
+  </div><!-- /.p-postList__footer -->
 </ul><!-- /.p-postList -->
