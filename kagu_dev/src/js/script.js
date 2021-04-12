@@ -28,7 +28,7 @@ jQuery(function () {
       jQuery("body").attr("data-scroll-bottom", "false");
     }
 
-    if (1000 < scrollTop) {
+    if (jQuery('#header').height() < scrollTop) {
       jQuery('.js-totop').addClass('is-active');
     } else {
       jQuery('.js-totop').removeClass('is-active');
@@ -120,7 +120,6 @@ jQuery(function () {
       // すべて入力されたとき
       $submit.prop('disabled', false);
     } else {
-      // 入力されていないとき
       $submit.prop('disabled', true);
     }
   });
