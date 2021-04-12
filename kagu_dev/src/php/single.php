@@ -20,12 +20,15 @@
 
               <div class="p-entry__header">
                 <div class="p-entry__meta">
-                  <time datetime="<?php the_time('c'); ?>" class="p-entry__date p-entry__date--published"><?php the_time(get_option('date_format')); ?></time><!-- /.p-entry__date -->
+                  <time datetime="<?php the_time('c'); ?>" class="p-entry__date p-entry__date--published c-beforeIcon c-beforeIcon--clock"><?php the_time(get_option('date_format')); ?></time><!-- /.p-entry__date -->
                   <?php if (get_the_modified_time('c') !== get_the_time('c')) : ?>
-                    <time datetime="<?php the_modified_time('c') ?>" class="p-entry__date p-entry__date--updated"><?php the_modified_time(get_option('date_format')); ?></time><!-- /.p-entry__date -->
+                    <time datetime="<?php the_modified_time('c') ?>" class="p-entry__date p-entry__date--updated c-beforeIcon c-beforeIcon--updated"><?php the_modified_time(get_option('date_format')); ?></time><!-- /.p-entry__date -->
                   <?php endif; ?>
-                  <?php if (get_the_terms(get_the_ID(), 'news_archives')) : ?>
-                    <a href="<?php echo esc_url(get_term_link(get_the_terms(get_the_ID(), 'news_archives')[0], 'news_archives')); ?>" class="p-entry__label c-label"><?php echo esc_html(get_the_terms(get_the_ID(), 'news_archives')[0]->name); ?></a><!-- /.p-entry__label -->
+                  <?php
+                  $taxonomy_name = array_keys(get_the_taxonomies())[0];
+                  if (get_the_terms(get_the_ID(), $taxonomy_name)) :
+                  ?>
+                    <a href="<?php echo esc_url(get_term_link(get_the_terms(get_the_ID(), $taxonomy_name)[0], $taxonomy_name)); ?>" class="p-entry__label c-label c-label--brown"><?php echo esc_html(get_the_terms(get_the_ID(), $taxonomy_name)[0]->name); ?></a><!-- /.p-entry__label -->
                   <?php endif; ?>
                 </div><!-- /.p-entry__meta -->
                 <h1 class="p-entry__title"><?php the_title(); ?></h1><!-- /.p-entry__title -->
@@ -61,6 +64,9 @@
             <p>投稿がありません</p>
           <?php endif;  ?>
         </article><!-- /.p-entry -->
+        <div class="single__footer">
+          <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" class="c-beforeIcon c-beforeIcon--arrowLeft"><?php echo esc_html(get_post_type_object(get_post_type())->label); ?>一覧に戻る</a><!-- /.c-beforeIcon -->
+        </div><!-- /.single__footer -->
       </div><!-- /.l-container l-container--narrow p-section__content -->
     </section><!-- /.p-section -->
 

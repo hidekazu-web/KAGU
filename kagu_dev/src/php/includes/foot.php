@@ -23,7 +23,7 @@
       </div><!-- /.p-footer__right -->
     </div><!-- /.p-footer__main -->
     <div class="p-footer__footer">
-      <a href="" class="p-footer__privacyLink">プライバシーポリシー</a>
+      <a href="<?php echo esc_html(home_url('/privacy')) ?>" class="p-footer__privacyLink">プライバシーポリシー</a>
       <p class="p-footer__copy"><small>&copy; 2020 <?php bloginfo('name'); ?> inc.</small></p><!-- /.p-footer__copy -->
     </div><!-- /.p-footer__footer -->
   </div><!-- /.l-container p-footer -->

@@ -2,10 +2,12 @@
   background-color: #b9a393;
   color: $white;
   font-size: 12px;
-  line-height: (32/12);
+  // line-height: (32/12);
+  line-height: 1.5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
 
   @include mq(pc) {
     font-size: 13px;
-    line-height: (32/13);
   }
 }

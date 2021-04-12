@@ -13,6 +13,8 @@
       } else {
         the_title();
       }
+    } elseif(is_single()) {
+      echo get_post_type_object(get_post_type())->label;
     } else {
       the_archive_title();
     } ?>
@@ -28,6 +30,10 @@
         echo get_query_var('post_type');
       } elseif (is_tax()) {
         echo get_query_var('term');
+      } elseif (is_home()) {
+        echo 'blog';
+      } elseif (is_single()) {
+        echo get_post_type_object(get_post_type())->name;
       }
       ?>
     </span>
