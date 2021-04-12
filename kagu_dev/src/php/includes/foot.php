@@ -13,7 +13,6 @@
           array(
             'depth' => 2,
             'theme_location' => 'footer',
-            'container' => '',
             'container' => 'nav',
             'container_class' => 'p-footer__nav',
             'menu_class' => 'p-footer__navList',
