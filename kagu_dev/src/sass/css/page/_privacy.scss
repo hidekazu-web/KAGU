@@ -1,0 +1,59 @@
+/************************************************************************
+* .p-privacyList
+************************************************************************/
+.p-privacy {}
+
+.p-privacy__body {
+  font-size: 15px;
+  line-height: (30/15);
+  font-weight: $fw-regular;
+}
+
+.p-privacy__list {
+  margin-top: 60px;
+
+  @include mq(tab) {
+    margin-top: 77px;
+  }
+}
+
+.p-privacy__footer {
+  margin-top: 30px;
+  text-align: right;
+  font-size: 15px;
+  line-height: (30/15);
+}
+
+.p-privacy__date {}
+
+.p-privacy__company {}
+
+/************************************************************************
+* .p-privacyList
+************************************************************************/
+.p-privacyList {
+
+}
+
+.p-privacyList__item {
+  & + & {
+    margin-top: 30px;
+
+    @include mq(tab) {
+      margin-top: 60px;
+    }
+  }
+}
+
+.p-privacyList__title {
+  font-weight: $fw-bold;
+
+  @include mq(tab) {
+    font-size: 20px;
+  }
+}
+
+.p-privacyList__text {
+  font-size: 14px;
+  line-height: (30/14);
+}

@@ -35,18 +35,18 @@
                   endif; ?>
 
                 </div><!-- /.p-privacyList -->
-
-                <div class="p-privacy__footer">
-                  <div class="p-privacy__date">
-                    <?php if (get_the_modified_time()) : ?>
-                      <time datetime="<?php echo the_modified_time('c'); ?>"><?php echo the_modified_time('Y年n月j日'); ?></time>改定
-                      <?php else : ?>
-                        <time datetime="<?php echo the_time('c'); ?>"><?php echo the_time('Y年n月j日'); ?></time>改定
-                    <?php endif; ?>
-                  </div><!-- /.p-privacy__date -->
-                  <div class="p-privacy__company">株式会社KAGU</div><!-- /.p-privacy__company -->
-                </div><!-- /.p-privacy__footer -->
               </div><!-- /.p-privacy__body -->
+
+              <div class="p-privacy__footer">
+                <div class="p-privacy__date">
+                  <?php if (get_the_modified_time()) : ?>
+                    <time datetime="<?php echo the_modified_time('c'); ?>"><?php echo the_modified_time('Y年n月j日'); ?></time>改定
+                  <?php else : ?>
+                    <time datetime="<?php echo the_time('c'); ?>"><?php echo the_time('Y年n月j日'); ?></time>改定
+                  <?php endif; ?>
+                </div><!-- /.p-privacy__date -->
+                <div class="p-privacy__company">株式会社KAGU</div><!-- /.p-privacy__company -->
+              </div><!-- /.p-privacy__footer -->
             </div><!-- /.p-privacy -->
 
           <?php endwhile; ?>
