@@ -45,7 +45,7 @@ $btn-letter-spacing: 0;
     cursor: pointer;
   }
 
-  &:hover,
+  &:not(:disabled):hover,
   &:focus {
     outline: none;
     color: $white;

@@ -46,6 +46,12 @@
   }
 }
 
+.p-section__lead {
+  text-align: center;
+  font-size: 15px;
+  line-height: (30/15);
+}
+
 
 .p-section__title.p-cta__title {
   & > span {

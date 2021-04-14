@@ -259,6 +259,8 @@ textarea {
 }
 
 textarea {
+  resize: vertical;
+
   &:hover,
   &:focus {
     outline: none;
@@ -363,52 +365,62 @@ input {
   }
 
   &[type="checkbox"] {
-    display: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    width: $size-checkbox;
+    height: $size-checkbox;
+    display: inline-block;
+    vertical-align: middle;
 
-    + span {
-      display: inline-block;
-      position: relative;
-      padding: 0 0 0 $size-checkbox-pd_left;
-      margin: 0 16px 0 0;
+    & + span {
       cursor: pointer;
-      transition: all 1s ease 0s;
+      padding-left: $size-checkbox-pd_left - $size-checkbox;
+      vertical-align: middle;
+      position: relative;
 
       &::before {
-        position: absolute;
         content: "";
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        background: #fff;
-        border: 1px solid $color-form-bd;
-        border-radius: 2px;
+        display: inline-block;
         width: $size-checkbox;
         height: $size-checkbox;
-        display: block;
-      }
-
-      &::after {
-        opacity: 0;
-        transition: opacity 0.3s ease 0s;
-      }
-    }
-
-    &:checked + span {
-      &::after {
         position: absolute;
-        content: "";
+        left: -$size-checkbox;
         top: 50%;
-        left: 0;
-        transform: translateY(-50%) rotate(-45deg);
-        width: $size-checkbox;
-        height: ($size-checkbox * 0.6);
-        margin-top: -0.2em;
-        display: block;
-        border-left: 4px solid $color-check_active;
-        border-bottom: 4px solid $color-check_active;
-        opacity: 1;
+        transform: translateY(-50%);
+        border: 1px solid #000;
+
+      }
+
+      &::after {
+        transition: opacity 0.3s ease 0s;
+        opacity: 0;
+
       }
     }
+
+    &:focus + span::before {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    &:checked:focus + span::before {
+      outline: none;
+    }
+
+    &:checked + span::after {
+      content: "";
+      display: inline-block;
+      width: $size-checkbox/2;
+      height: $size-checkbox;
+      position: absolute;
+      top: 50%;
+      left: -$size-checkbox;
+      transform: translateY(-70%) translateX(0.5em) rotate(45deg);
+      border-right: 4px solid $color-check_active;
+      border-bottom: 4px solid $color-check_active;
+      opacity: 1;
+    }
+
   }
 }
 

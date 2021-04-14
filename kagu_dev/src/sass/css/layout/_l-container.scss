@@ -15,6 +15,12 @@
   }
 }
 
+.l-container--semiNarrow {
+  @include mq(pc) {
+    width: 1100px;
+  }
+}
+
 .l-container--wide {
   @include mq(pc) {
     width: $layout-width-container * 1.2;

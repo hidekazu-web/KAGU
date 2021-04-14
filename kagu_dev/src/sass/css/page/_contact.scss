@@ -1,0 +1,230 @@
+.p-byPhoneSection,
+.p-byMailSection {
+  margin-top: 50px;
+
+  @include mq(tab) {
+    margin-top: 100px;
+  }
+}
+
+.p-byPhoneSection__box {
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    margin-top: 40px;
+  }
+}
+
+.p-byPhoneSection__telWrap {
+  display: block;
+}
+
+.p-phoneBox {
+  padding: 30px 0;
+  background-color: #f7f4f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+
+  @include mq(tab) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 39px;
+    background: transparent url("../img/contact/phone-icon.svg") no-repeat center center / contain;
+
+    @include mq(tab) {
+      width: 58px;
+      height: 59px;
+    }
+  }
+}
+
+.p-phoneBox__main {
+  margin-left: 10px;
+
+  @include mq(tab) {
+    margin-left: 29px;
+  }
+}
+
+.p-phoneBox__tel {
+  font-family: $ff-accent;
+  color: $color-secondary;
+  font-size: 30px;
+  line-height: 1;
+
+  @include mq(tab) {
+    font-size: 48px;
+  }
+}
+
+.p-phoneBox__time {
+  color: #7a7a7a;
+  font-size: 12px;
+
+  @include mq(tab) {
+    font-size: 15px;
+  }
+}
+
+.p-byMailSection {
+  &.p-section {
+    background-color: $white;
+  }
+}
+
+.p-byMailSection__form {
+  margin-top: 31px;
+
+  @include mq(tab) {
+    margin-top: 40px;
+  }
+}
+
+.p-form {
+}
+
+.p-form__items {
+}
+
+.p-form__item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid #d9dbde;
+
+  &:last-child {
+    border-bottom: 1px solid #d9dbde;
+  }
+
+  @include mq(tab) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.p-form__itemHead {
+  @include mq(tab) {
+    flex: 0 0 260px;
+  }
+}
+
+.p-form__itemBody {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  @include mq(tab) {
+    margin-top: 0;
+  }
+}
+
+.p-form__itemBodyItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 260px;
+
+  & + & {
+    margin-left: 20px;
+
+    @include mq(tab) {
+      margin-left: 40px;
+    }
+  }
+}
+
+.p-form__label {
+  font-size: 14px;
+  font-weight: $fw-bold;
+
+  &.is-required {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      margin-left: 20px;
+      content: "必須";
+      font-size: 11px;
+      font-weight: $fw-regular;
+      padding: 5px 4px;
+      line-height: 1;
+      background-color: $color-main;
+      color: $white;
+      display: inline-block;
+    }
+  }
+}
+
+.p-form__label--prepend {
+  font-weight: $fw-regular;
+  flex: 0 0 38px;
+}
+
+.p-form__input {
+  border: none;
+  background-color: #f7f4f3;
+}
+
+.p-form__input--row {
+  // flex: 0 1 69.333333333%;
+  // margin-left: 20px;
+  // width: 100%;
+}
+
+.p-form__textarea {
+  min-height: 100px;
+
+  @include mq(tab) {
+    min-height: 180px;
+  }
+}
+
+.p-form__checkBox {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.p-form__checkBoxLabel {}
+
+.p-form__checkBoxInput {
+}
+
+.p-form__checkBoxText {
+  font-weight: $fw-bold;
+
+  & > a {
+    color: $color-main;
+    border-bottom: 1px solid $color-main;
+  }
+
+  .p-form__checkBox &::before {
+    border: none;
+    background-color: #f7f4f3;
+  }
+}
+
+.p-form__footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.p-form__submit {
+}

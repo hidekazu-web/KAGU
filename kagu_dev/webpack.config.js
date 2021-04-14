@@ -2,6 +2,7 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: 'development',
+  // mode: 'production',
   module: {
     rules: [
       // {
@@ -45,5 +46,6 @@ module.exports = {
   entry: './src/js/script.js',
   output: {
     filename: 'script.js'
-  }
+  },
+  devtool: "hidden-source-map"
 }

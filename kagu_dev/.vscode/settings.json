@@ -11,7 +11,7 @@
 		"editor.formatOnSave": true
 	},
 	"[scss]": {
-		"editor.wordSeparators": "`~!$%^&*()=+[{]}|;:'\",<>/?",
+		"editor.wordSeparators": "`~!%^&*()=+[{]}|;:'\",<>/?",
 		"editor.formatOnSave": true
 	},
 	"[javascript]": {
