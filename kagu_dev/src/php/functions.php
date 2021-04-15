@@ -75,7 +75,7 @@ add_filter('get_the_archive_title', function ($title) {
   } elseif (is_search()) {
     $title = '検索結果：' . esc_html(get_search_query(false));
   } elseif (is_404()) {
-    $title = '「404」ページが見つかりません';
+    $title = '404';
   } else {
   }
   return $title;

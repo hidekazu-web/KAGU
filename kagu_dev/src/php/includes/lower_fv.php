@@ -35,6 +35,8 @@
         echo 'blog';
       } elseif (is_single()) {
         echo get_post_type_object(get_post_type())->name;
+      } elseif (is_404()) {
+        echo 'Not Found';
       }
       ?>
     </span>
