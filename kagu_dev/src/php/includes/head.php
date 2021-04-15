@@ -11,7 +11,6 @@
             'container' => '',
             'container' => 'nav',
             'container_class' => 'p-header__nav',
-            'container_id' => 'drawer-content1',
           )
         );
         ?>

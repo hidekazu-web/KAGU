@@ -18,7 +18,7 @@
             <div class="swiper-container p-fv__slider">
               <div class="swiper-wrapper p-fv__slideWrapper">
                 <?php foreach ($fv_images as $image) : ?>
-                  <div class="swiper-slide p-fv__slideImg"><img srcset="<?php echo wp_get_attachment_image_src($image['fv-image-sp'], 'medium_large')[0]; ?> 959w, <?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?> 1500w" src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?>"></div>
+                  <div class="swiper-slide p-fv__slideImg"><img srcset="<?php echo wp_get_attachment_image_src($image['fv-image-sp'], 'medium_large')[0]; ?> 959w, <?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?> 1500w" sizes="100vw" src="<?php echo wp_get_attachment_image_src($image['fv-image'], 'full')[0]; ?>" alt="家具イメージ"></div>
                 <?php endforeach; ?>
               </div>
               <!-- If we need pagination -->
@@ -26,11 +26,11 @@
             </div>
           <?php endif; ?>
           <div class="l-container p-fv__container">
-            <p class="p-fv__text">自分らしさを<br class="u-hidden--pc">レイアウトする</p><!-- /.p-fv__text -->
+            <h2 class="p-fv__text">自分らしさを<br class="u-hidden--pc">レイアウトする</h2><!-- /.p-fv__text -->
           </div><!-- /.l-container -->
         </section><!-- /.p-section p-fv -->
 
-        <section class="p-section p-newsSection">
+        <section id="news" class="p-section p-newsSection">
           <div class="l-container l-container--narrow p-section__content p-newsSection__content">
             <div class="c-box">
               <?php $post_object = get_post_type_object('news'); ?>
@@ -81,7 +81,7 @@
           </div><!-- /.l-container l-container--narrow p-newsSection__content -->
         </section><!-- /.p-section p-newsSection -->
 
-        <section class="p-section p-furnitureSection">
+        <section id="furniture" class="p-section p-furnitureSection">
           <div class="l-container p-section__content">
             <h2 class="p-section__title">取り扱い家具<span>furniture</span></h2><!-- /.p-section__title -->
             <div class="p-section__main">
@@ -164,12 +164,12 @@
           </div><!-- /.l-container p-section__content -->
         </section><!-- /.p-section p-furnitureSection -->
 
-        <section class="p-section p-shopSection">
+        <section id="shop" class="p-section p-shopSection">
           <div class="l-container p-section__content">
             <a href="<?php echo esc_html(home_url('/store')) ?>" class="p-media p-media--link p-shopSection__item">
               <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_store.jpg" alt="ショールーム"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
-                <div class="p-media__title">販売店・展示場一覧</div><!-- /.p-media__title -->
+                <h2 class="p-media__title">販売店・展示場一覧</h2><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの販売店をご覧いただけます。<br>また、KAGUの家具は全国のショールームにてご覧いただけます。</div><!-- /.p-media__text -->
                 <div class="p-media__footer">
                   <span class="c-afterIcon c-afterIcon--arrowRight">販売店・展示場一覧を見る</span>
@@ -179,7 +179,7 @@
             <a href="https://note.com/hi_roki/n/ne77175ea9395" target="_blank" rel="noopener noreferrer" class="p-media p-media--link p-shopSection__item">
               <figure class="p-media__img"><img src="<?php echo get_template_directory_uri(); ?>/img/front/img_online.jpg" alt="オンラインストア"></figure><!-- /.p-media__img -->
               <div class="p-media__body">
-                <div class="p-media__title">ONLINE STORE</div><!-- /.p-media__title -->
+                <h2 class="p-media__title">ONLINE STORE</h2><!-- /.p-media__title -->
                 <div class="p-media__text">KAGUの家具はオンラインストアでもご購入いただけます。</div><!-- /.p-media__text -->
                 <div class="p-media__footer">
                   <span class="c-afterIcon c-afterIcon--outerLink">オンラインストアを見る</span>

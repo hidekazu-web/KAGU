@@ -17,7 +17,7 @@
 
         <section class="p-section">
           <div class="l-container p-section__content p-alternate">
-            <div class="p-alternate__item p-storePageItem">
+            <div id="shop" class="p-alternate__item p-storePageItem">
               <figure class="p-alternate__itemPrimary p-storePageItem__img">
                 <div class="c-img">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/store/img_store.jpg" alt="ストアマップ">
@@ -31,7 +31,7 @@
                 </div><!-- /.p-alternate__itemFooter -->
               </div><!-- /.p-alternate__itemSecondary -->
             </div><!-- /.p-alternate__item -->
-            <div class="p-alternate__item p-storePageItem">
+            <div id="showroom" class="p-alternate__item p-storePageItem">
               <figure class="p-alternate__itemPrimary p-storePageItem__img">
                 <div class="c-img">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/store/img_showroom.jpg" alt="ショールームイメージ">

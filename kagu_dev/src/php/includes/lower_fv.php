@@ -1,10 +1,11 @@
 <section class="p-lowerFv">
 
-  <h1 class="p-lowerFv__title c-pageTitle">
+  <<?php echo (is_single() ? 'p' : 'h1'); ?> class="p-lowerFv__title c-pageTitle">
     <?php
     if(is_home()) {
       echo 'ブログ';
     } elseif (is_page()) {
+      $parent_slug = '';
       if ($post->post_parent) {
         $parent_slug = get_post($post->post_parent)->post_name;
       }
@@ -37,5 +38,5 @@
       }
       ?>
     </span>
-  </h1><!-- /.p-lowerFv__title -->
+  </<?php echo (is_single() ? 'p' : 'h1'); ?>><!-- /.p-lowerFv__title -->
 </section><!-- /.p-lowerFv -->

@@ -201,12 +201,13 @@ function sassFunc() {
   return src(PATHS.styles.src, { sourcemaps: true })
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(sassGlob())
-    .pipe(sass({
+    .pipe(mode.development(sass({
       outputStyle: "expanded",
       // importer: packageImporter({
       //   extensions: [".scss", ".css"]
       // })
-    }))
+    })))
+    .pipe(mode.production(sass({ outputStyle: 'compressed' })))
     .pipe(postcss([
       autoprefixer({
         grid: true,

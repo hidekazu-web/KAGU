@@ -225,18 +225,15 @@ form {
     // transition: all 0.3s ease 0s;
 
     &:disabled {
-      background-color: $color-disable;
-      color: $white;
-      // cursor: pointer;
+      background-color: $color-disable!important;
+      color: $white!important;
     }
 
     &:not(:disabled):hover,
     &:focus {
       outline: none;
-    }
-
-    &:not(:disabled):hover {
-      opacity: $opacity;
+      color: $white;
+      opacity: 1;
     }
 
     ::-moz-focus-inner {
@@ -389,13 +386,11 @@ input {
         top: 50%;
         transform: translateY(-50%);
         border: 1px solid #000;
-
       }
 
       &::after {
         transition: opacity 0.3s ease 0s;
         opacity: 0;
-
       }
     }
 
@@ -420,7 +415,6 @@ input {
       border-bottom: 4px solid $color-check_active;
       opacity: 1;
     }
-
   }
 }
 

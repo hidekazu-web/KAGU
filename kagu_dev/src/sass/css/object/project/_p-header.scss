@@ -131,7 +131,7 @@
   &:hover,
   &:focus {
     border-color: currentColor;
-    background: $white;
+    background-color: $white;
   }
 
   @include mq(menu-sp) {

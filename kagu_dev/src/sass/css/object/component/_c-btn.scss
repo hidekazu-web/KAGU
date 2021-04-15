@@ -45,13 +45,12 @@ $btn-letter-spacing: 0;
     cursor: pointer;
   }
 
-  &:not(:disabled):hover,
+  &:hover,
   &:focus {
     outline: none;
     color: $white;
     background-color: $btn-font-color;
     opacity: 1;
-    // border-color: currentColor; // その要素もしくは親要素のcolorの値と同じになる
   }
 
   // &::-moz-foucus-inner {
