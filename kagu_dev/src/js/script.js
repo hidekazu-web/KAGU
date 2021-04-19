@@ -114,24 +114,26 @@ jQuery(function () {
       });
   }
 
+  jQuery('.js-submit').prop('disabled', true);
+
   // form validation
   (function () {
     var requireFlg = false;
     var privacyFlg = false;
-    var $require = jQuery('#js-form [required]');
+    var $require = jQuery('#js-form input[type="text"], #js-form input[type="email"], #js-form textarea, #js-form input[type="checkbox"]');
     var fillCount = 0;
 
     function setSubmitProp() {
       if (requireFlg && privacyFlg) {
-        jQuery('#js-submit').prop('disabled', false);
+        jQuery('.js-submit').prop('disabled', false);
       } else {
-        jQuery('#js-submit').prop('disabled', true);
+        jQuery('.js-submit').prop('disabled', true);
       }
     }
 
     // 必須項目
     $require.on('blur', function () {
-      if (jQuery(this).attr('class') === 'js-formKana' && !jQuery(this).val().match(/^([ァ-ン]|ー)+$/)) {
+      if (jQuery(this).hasClass('js-formKana') && !jQuery(this).val().match(/^([ァ-ン]|ー)+$/)) {
         jQuery(this).val('');
         alert('全角カタカナで入力してください。')
       }
