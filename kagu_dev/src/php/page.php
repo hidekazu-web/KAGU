@@ -13,15 +13,32 @@
 
   <main class="l-main">
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <section class="p-section">
+      <div class="l-container l-container--narrow p-section__content">
+        <article class="p-entry">
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <?php the_content(); ?>
+              <div class="p-entry__header">
+                <h1 class="p-entry__title"><?php the_title(); ?></h1><!-- /.p-entry__title -->
+                <?php if (has_post_thumbnail()) : ?>
+                  <figure class="p-entry__img c-img">
+                    <?php the_post_thumbnail('large'); ?>
+                  </figure><!-- /.p-entry__img -->
+                <?php endif; ?>
+              </div><!-- /.p-entry__header -->
 
-      <?php endwhile; ?>
-    <?php else : ?>
-      <!-- 投稿がないときの処理 -->
-      <p>投稿がありません</p>
-    <?php endif;  ?>
+              <div class="p-entry__body">
+                <?php the_content(); ?>
+              </div><!-- /.p-entry__body -->
+
+            <?php endwhile; ?>
+          <?php else : ?>
+            <!-- 投稿がないときの処理 -->
+            <p>投稿がありません</p>
+          <?php endif;  ?>
+        </article><!-- /.p-entry -->
+      </div><!-- /.l-container l-container--narrow p-section__content -->
+    </section><!-- /.p-section -->
 
   </main><!-- /.l-main -->
 
