@@ -334,7 +334,7 @@ const browserSyncOption = {
   //   baseDir: PATHS.pug.dest, // output directory,
   //   index: "index.html"
   // }
-  proxy: 'https://kagu.local'
+  proxy: 'https://' + themes + '.local'
 };
 function browsersync(done) {
   browserSync.init(browserSyncOption);
