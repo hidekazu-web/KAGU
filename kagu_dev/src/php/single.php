@@ -72,6 +72,9 @@
 
   </main><!-- /.l-main -->
 
+  <?php get_template_part('includes/cta'); ?>
   <?php get_template_part('includes/foot'); ?>
   <?php get_footer(); ?>
 </body>
+
+</html>
