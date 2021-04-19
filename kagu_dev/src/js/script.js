@@ -4,12 +4,17 @@ import Swiper from 'swiper/swiper-bundle';
 // import Swiper styles
 import 'swiper/swiper-bundle.min.css';
 
+
+import * as adds from './add_class_mw_wp_form';
+
 // ローディング判定
 jQuery(window).on("load", function () {
   jQuery("body").attr("data-loading", "true");
 });
 
 jQuery(function () {
+  adds.add_class_mw_wp_form();
+
   // スクロール判定
   jQuery(window).on("scroll", function () {
     let scrollTop = jQuery(this).scrollTop();
