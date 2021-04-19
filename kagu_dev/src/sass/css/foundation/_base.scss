@@ -209,9 +209,11 @@ form {
   margin: 0;
   padding: 0;
 
-  button {
+  button,
+  input[type="submit"],
+  input[type="button"] {
     // appearance: none;
-    // width: auto;
+    width: auto;
     // display: inline-block;
     // padding: 0.6em 2em;
     // margin: 0;
@@ -226,6 +228,7 @@ form {
 
     &:disabled {
       background-color: $color-disable!important;
+      border-color: transparent;
       color: $white!important;
     }
 
@@ -280,38 +283,6 @@ input {
     outline: none;
     border-color: $color-form-bd_active;
     box-shadow: none;
-  }
-
-  &[type="submit"],
-  &[type="button"] {
-    width: auto;
-    display: inline-block;
-    padding: 0.6em 2em;
-    margin: 0;
-    background-image: none;
-    background-color: $color-main;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 0;
-    font-size: 1.6rem;
-    cursor: pointer;
-    -webkit-appearance: none;
-    transition: all 0.3s ease 0s;
-
-    &:hover,
-    &:focus {
-      outline: none;
-    }
-
-    &:hover {
-      opacity: $opacity;
-    }
-
-    ::-moz-focus-inner {
-      padding: 0;
-      border: none;
-    }
   }
 
   &[type="radio"] {

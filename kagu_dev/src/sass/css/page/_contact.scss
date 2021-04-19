@@ -125,14 +125,17 @@
 
 .p-form__itemBody {
   margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   width: 100%;
 
   @include mq(tab) {
     margin-top: 0;
   }
+}
+
+.p-form__itemBody--flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .p-form__itemBodyItem {
