@@ -15,7 +15,7 @@
 
     <section class="p-section">
       <div class="l-container l-container--narrow p-section__content">
-        <article class="p-entry">
+        <article class="<?php post_class(array('p-entry')); ?>">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
               <div class="p-entry__header">
