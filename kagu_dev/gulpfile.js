@@ -80,8 +80,8 @@ const PATHS = {
     dest: "./dist",
   },
   php: {
-    src: "./src/php/**/*.{php,png,ico}",
-    watch: "./src/php/**/*.php",
+    src: "./src/php/**/!(_)*.{php,png,ico}",
+    watch: "./src/php/**/*.{php,png,ico}",
     destwp: "../public/wp-content/themes/" + themes,
   },
   ejs: {
