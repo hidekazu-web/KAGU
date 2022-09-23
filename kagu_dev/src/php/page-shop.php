@@ -90,7 +90,7 @@
                   <div id="<?php echo $shop_list[0]['shop_area']; ?>" class="p-storeListSection__areaWrap">
                     <h3 class="c-lv3Heading"><?php echo esc_html($area); ?></h3><!-- /.c-lv3Heading -->
                     <ul class="p-storeList">
-                      <?php foreach($shop_list as $shop) : ?>
+                      <?php foreach ($shop_list as $shop) : ?>
                         <li class="p-storeList__item p-storeItem">
                           <div class="p-storeItem__body">
                             <div class="p-storeItem__title"><?php echo esc_html($shop['shop_title']); ?></div><!-- /.p-storeItem__title -->
